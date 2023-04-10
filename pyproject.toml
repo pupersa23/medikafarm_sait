@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "main-sait"
+version = "0.1.0"
+description = "Сайт медицинского центра МедикаФарм"
+authors = ["Владимир Рязанов <ryazanov745@gmail.com>"]
+readme = "README.md"
+packages = [{include = "main_sait"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.2"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.2.2"
+isort = "^5.12.0"
+flake8 = "^6.0.0"
+black = "^23.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
