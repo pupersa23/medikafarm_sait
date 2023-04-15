@@ -12,16 +12,16 @@
     {% endblock %}
     </title>   
   </head>
-  <body> 
+  <body>
     
     <nav class="py-2 bg-light border-bottom">
       <div class="container d-flex flex-wrap">
-        <ul class="nav me-auto">
-          Режим работы: бла бла
-        </ul>
-        <ul class="nav">
-          <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Личный кабинет</a></li>
-        </ul>
+        <div class="topline">
+          <div class="uk-container uk-container-center">
+            <div class="topline-center">Мы открыты в пн-пт 8<sup>00</sup>-18<sup>00</sup>, в субботу — 9<sup>00</sup>-16<sup>00</sup>. Воскресенье — выходной день. </div>
+            <div class="topline-right"></div>
+          </div>
+          </div>
       </div>
     </nav>
 
@@ -31,11 +31,10 @@
 
     <main>
       {% block content %}
-        Контент не подвезли :(
       {% endblock %}
     </main>
 
-    <footer class="footer mt-auto py-3 bg-light"> 
+    <footer class="footer mt-auto py-3 bg-light border-top"> 
       {% include 'includes/footer.html' %} 
     </footer> 
 
