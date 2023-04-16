@@ -7,8 +7,10 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="container">
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+    <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -16,24 +18,24 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://img.freepik.com/free-vector/blue-3d-particles-background-design_1017-15410.jpg?w=1800&t=st=1681478362~exp=1681478962~hmac=53e2bc7ce43fb77d57b398372d6ee3860ee8385e36e391e19668091d1d86e823" class="img-thumbnail" alt="...">
+            <img src="{% static '1.jpg' %}" class="img-fluid d-block mw-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Первое объявление</h5>
-              <p>Текст обявления и так же можно добавить кнопку на страницу акции</p>
+              <h5>Первый слайд</h5>
+              <p>Some representative placeholder content for the first slide.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="https://img.freepik.com/free-vector/blue-3d-particles-background-design_1017-15410.jpg?w=1800&t=st=1681478362~exp=1681478962~hmac=53e2bc7ce43fb77d57b398372d6ee3860ee8385e36e391e19668091d1d86e823" class="img-thumbnail" alt="...">
+            <img src="{% static '1.jpg' %}" class="img-fluid d-block mw-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Второе объявление</h5>
-              <p>Текст обявления и так же можно добавить кнопку на страницу акции</p>
+              <h5>Второй слайд</h5>
+              <p>Some representative placeholder content for the second slide.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="https://img.freepik.com/free-vector/blue-3d-particles-background-design_1017-15410.jpg?w=1800&t=st=1681478362~exp=1681478962~hmac=53e2bc7ce43fb77d57b398372d6ee3860ee8385e36e391e19668091d1d86e823" class="img-thumbnail" alt="...">
+            <img src="{% static '1.jpg' %}" class="img-fluid d-block mw-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Третье объявление</h5>
-              <p>Текст обявления и так же можно добавить кнопку на страницу акции</p>
+              <h5>Третий слайд</h5>
+              <p>Some representative placeholder content for the third slide.</p>
             </div>
           </div>
         </div>
@@ -46,10 +48,61 @@
           <span class="visually-hidden">Следующий</span>
         </button>
       </div>
-    </div>
 
-<div class="container">
-    ssss
+      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal">Выгодные цены</h1>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">Профосмотры</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">от 1 200Р<small class="text-muted fw-light">/за человека</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Возможен выезд на предприятие</li>
+                <li>Качественное оказание услуг</li>
+                <li>Собственный менеджер</li>
+              </ul>
+              <button type="button" class="w-100 btn btn-lg btn-outline-primary">Перейти</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Медицинские книжки</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">от 1 600Р<small class="text-muted fw-light">/за человека</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Возможен выезд на предприятие</li>
+                  <li>Качественное оказание услуг</li>
+                  <li>Собственный менеджер</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Перейти</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Аренда ФЛГ</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">от 17 000Р<small class="text-muted fw-light">/по Москве</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Возможен выезд на предприятие</li>
+                  <li>Качественное оказание услуг</li>
+                  <li>Собственный менеджер</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Перейти</button>
+              </div>
+            </div>
+          </div>
+      </div>
+
 </div>
 
 {% endblock %}
