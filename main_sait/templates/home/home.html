@@ -3,54 +3,43 @@
 
 
 {% block title%}
-Главная страница
+Медицинский центр МедикаФарм
 {% endblock %}
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid">
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  
+  <div class="carousel-inner">
+    
+    <div class="carousel-item active">
+      <svg class="bd-placeholder-img" width="100%" height="400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="1000" fill="#009e9e"></rect></svg>
 
-    <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Another example headline.</h1>
+          <p>Some representative placeholder content for the second slide of the carousel.</p>
+          <p><a class="btn btn-lg btn-success" href="#">Learn more</a></p>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{% static '1.jpg' %}" class="img-fluid d-block mw-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Первый слайд</h5>
-              <p>Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="{% static '1.jpg' %}" class="img-fluid d-block mw-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Второй слайд</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="{% static '1.jpg' %}" class="img-fluid d-block mw-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Третий слайд</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Назад</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Следующий</span>
-        </button>
       </div>
-
+    </div>
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Предыдущее</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Следующее</span>
+  </button>
+</div>
+</div>
+  
+  <div class="container">
       <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <h1 class="display-4 fw-normal">Выгодные цены</h1>
+        <h1 class="display-4 fw-normal">Выгодные корпоративный цены</h1>
       </div>
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div class="col">
@@ -65,7 +54,7 @@
                 <li>Качественное оказание услуг</li>
                 <li>Собственный менеджер</li>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-outline-primary">Перейти</button>
+              <button type="button" class="w-100 btn btn-lg btn-outline-success">Перейти</button>
             </div>
           </div>
         </div>
@@ -81,7 +70,7 @@
                   <li>Качественное оказание услуг</li>
                   <li>Собственный менеджер</li>
                 </ul>
-                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Перейти</button>
+                <button type="button" class="w-100 btn btn-lg btn-outline-success">Перейти</button>
               </div>
             </div>
           </div>
@@ -97,12 +86,187 @@
                   <li>Качественное оказание услуг</li>
                   <li>Собственный менеджер</li>
                 </ul>
-                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Перейти</button>
+                <button type="button" class="w-100 btn btn-lg btn-outline-success">Перейти</button>
               </div>
             </div>
           </div>
       </div>
+    </div>
 
-</div>
+
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img src="{% static 'MyCollages.png' %}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold lh-1 mb-3">О центре</h1>
+          <p class="lead">Медицинский центр "Медикафарм" предоставляет медицинские услуги с 2006 г. Мы гордимся качеством своих услуг, прислушиваемся к пожеланиям клиентов. Мы поддерживаем цены на доступном уровне, а график работы выстроен так, чтобы нашим клиентам было удобно попасть на прием в т.ч. после работы.
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <button type="button" class="btn btn-success btn-lg px-4 me-md-2">Перейти</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container px-4 py-5">
+      <h2 class="pb-2">Наши специалисты</h2>
+      <p class="text-muted ">В клинике «МедикаФарм» ведут консультативный прием доктора различных специальностей, все обладают опытом и знаниями в своей области. На консультации врач оценивает состояние здоровья, собирает анамнез, при необходимости проводит или назначает обследования. После определения диагноза даются рекомендации по лечению.</p>
+          
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center border-bottom pb-2">
+      <a href="#" class="btn btn-success btn-lg px-4 me-md-2">Все специалисты</a>
+          <button type="button" class="btn btn-success btn-lg px-4 me-md-2" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo">Задать вопрос врачу</button>
+            
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Новое сообщение</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Тема:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                      <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Сообщение:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary">Отправить</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5">
+              <div class="col">
+                <div class="d-flex flex-column gap-2 align-items-center">
+                  <div class="feature-icon-small d-inline-flex align-items-center justify-content-center fs-4 rounded-3">
+                    <img src="https://img.freepik.com/free-photo/portrait-of-confident-male-doctor_329181-12190.jpg?w=1060&t=st=1681923290~exp=1681923890~hmac=bbd2b02f8a43699e70bad22915d256d42e3d8a50f7050165740f0dd56d00ef65" class="rounded mx-auto d-block" width="280" height="350" alt="">
+                  </div>
+                  <h5 class="fw-semibold mb-0">Фаимилия Имя Отчество</h5>
+                  <p class="text-muted">Кандидат заслуги</p>
+                </div>
+              </div>
+        
+              <div class="col">
+                <div class="d-flex flex-column gap-2 align-items-center">
+                  <div class="feature-icon-small d-inline-flex align-items-center justify-content-center fs-4 rounded-3">
+                    <img src="https://img.freepik.com/free-photo/portrait-of-confident-male-doctor_329181-12190.jpg?w=1060&t=st=1681923290~exp=1681923890~hmac=bbd2b02f8a43699e70bad22915d256d42e3d8a50f7050165740f0dd56d00ef65" class="rounded mx-auto d-block" width="280" height="350" alt="">
+                  </div>
+                  <h5 class="fw-semibold mb-0">Фаимилия Имя Отчество</h5>
+                  <p class="text-muted">Кандидат заслуги</p>
+                </div>
+              </div>
+        
+              <div class="col">
+                <div class="d-flex flex-column gap-2 align-items-center">
+                  <div class="feature-icon-small d-inline-flex align-items-center justify-content-center fs-4 rounded-3">
+                    <img src="https://img.freepik.com/free-photo/portrait-of-confident-male-doctor_329181-12190.jpg?w=1060&t=st=1681923290~exp=1681923890~hmac=bbd2b02f8a43699e70bad22915d256d42e3d8a50f7050165740f0dd56d00ef65" class="rounded mx-auto d-block" width="280" height="350" alt="">
+                  </div>
+                  <h5 class="fw-semibold mb-0">Фаимилия Имя Отчество</h5>
+                  <p class="text-muted">Кандидат заслуги</p>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="d-flex flex-column gap-2 align-items-center">
+                  <div class="feature-icon-small d-inline-flex align-items-center justify-content-center fs-4 rounded-3">
+                    <img src="https://img.freepik.com/free-photo/portrait-of-confident-male-doctor_329181-12190.jpg?w=1060&t=st=1681923290~exp=1681923890~hmac=bbd2b02f8a43699e70bad22915d256d42e3d8a50f7050165740f0dd56d00ef65" class="rounded mx-auto d-block" width="280" height="350" alt="">
+                  </div>
+                  <h5 class="fw-semibold mb-0">Фаимилия Имя Отчество</h5>
+                  <p class="text-muted">Кандидат заслуги</p>
+                </div>
+              </div>
+            </div>
+    </div>
+
+
+    <div class="container">
+
+      <h2 class="pb-2 border-bottom">Статьи</h2>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 py-5">
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-grid gap-2 col-6 mx-auto g-4 py-5">
+        <button class="btn btn-outline-success" type="button">Все статьи</button>
+      </div>
+
+    </div>
 
 {% endblock %}
