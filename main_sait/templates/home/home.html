@@ -9,21 +9,29 @@
 {% block content %}
 
 <div class="container-fluid">
+
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
   
   <div class="carousel-inner">
-    
-    <div class="carousel-item active">
-      <svg class="bd-placeholder-img" width="100%" height="400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="1000" fill="#009e9e"></rect></svg>
+    {% for boar in board %}
+    <div class="carousel-item {% if boar.choice  == 'true' %}active{% endif %}">
+      <svg class="bd-placeholder-img" 
+           width="100%" 
+           height="500" 
+           xmlns="http://www.w3.org/2000/svg" 
+           aria-hidden="true" 
+           preserveAspectRatio="xMidYMid slice" 
+           focusable="false"><rect width="100%" height="1000" fill="#009e9e"></rect></svg>
 
       <div class="container">
         <div class="carousel-caption">
-          <h1>Another example headline.</h1>
-          <p>Some representative placeholder content for the second slide of the carousel.</p>
-          <p><a class="btn btn-lg btn-success" href="#">Learn more</a></p>
+          <h1>{{ boar.title }}</h1>
+          <p>{{ boar.description|linebreaks }}</p>
+          {% if boar.url_for_button != '' %}<p><a class="btn btn-lg btn-success" href="{{ boar.url_for_button }}">Перейти</a></p>{% endif %}
         </div>
       </div>
     </div>
+    {% endfor %}
     
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
@@ -35,6 +43,7 @@
     <span class="visually-hidden">Следующее</span>
   </button>
 </div>
+
 </div>
   
   <div class="container">
@@ -42,54 +51,24 @@
         <h1 class="display-4 fw-normal">Выгодные корпоративный цены</h1>
       </div>
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+
+        {% for pric in price %}
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Профосмотры</h4>
+              <h4 class="my-0 fw-normal">{{ pric.title }}</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">от 1 200Р<small class="text-muted fw-light">/за человека</small></h1>
+              <h1 class="card-title pricing-card-title">{{ pric.price }}<small class="text-muted fw-light">/{{ pric.quantity }}</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>Возможен выезд на предприятие</li>
-                <li>Качественное оказание услуг</li>
-                <li>Собственный менеджер</li>
+                <li>{{ pric.description|linebreaks }}</li>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-outline-success">Перейти</button>
+              <a class="w-100 btn btn-lg btn-outline-success" href="{{ pric.url_for_button }}">Перейти</a>
             </div>
           </div>
         </div>
-        <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Медицинские книжки</h4>
-              </div>
-              <div class="card-body">
-                <h1 class="card-title pricing-card-title">от 1 600Р<small class="text-muted fw-light">/за человека</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Возможен выезд на предприятие</li>
-                  <li>Качественное оказание услуг</li>
-                  <li>Собственный менеджер</li>
-                </ul>
-                <button type="button" class="w-100 btn btn-lg btn-outline-success">Перейти</button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Аренда ФЛГ</h4>
-              </div>
-              <div class="card-body">
-                <h1 class="card-title pricing-card-title">от 17 000Р<small class="text-muted fw-light">/по Москве</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Возможен выезд на предприятие</li>
-                  <li>Качественное оказание услуг</li>
-                  <li>Собственный менеджер</li>
-                </ul>
-                <button type="button" class="w-100 btn btn-lg btn-outline-success">Перейти</button>
-              </div>
-            </div>
-          </div>
+        {% endfor %}
+          
       </div>
     </div>
 
@@ -101,7 +80,7 @@
         </div>
         <div class="col-lg-6">
           <h1 class="display-5 fw-bold lh-1 mb-3">О центре</h1>
-          <p class="lead">Медицинский центр "Медикафарм" предоставляет медицинские услуги с 2006 г. Мы гордимся качеством своих услуг, прислушиваемся к пожеланиям клиентов. Мы поддерживаем цены на доступном уровне, а график работы выстроен так, чтобы нашим клиентам было удобно попасть на прием в т.ч. после работы.
+          <p class="lead">Медицинский центр "МедикаФарм" предоставляет медицинские услуги с 2006 г. Мы гордимся качеством своих услуг, прислушиваемся к пожеланиям клиентов. Мы поддерживаем цены на доступном уровне, а график работы выстроен так, чтобы нашим клиентам было удобно попасть на прием в т.ч. после работы.
           </p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             <button type="button" class="btn btn-success btn-lg px-4 me-md-2">Перейти</button>
@@ -148,45 +127,20 @@
           </div>
 
             <div class="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5">
-              <div class="col">
-                <div class="d-flex flex-column gap-2 align-items-center">
-                  <div class="feature-icon-small d-inline-flex align-items-center justify-content-center fs-4 rounded-3">
-                    <img src="https://img.freepik.com/free-photo/portrait-of-confident-male-doctor_329181-12190.jpg?w=1060&t=st=1681923290~exp=1681923890~hmac=bbd2b02f8a43699e70bad22915d256d42e3d8a50f7050165740f0dd56d00ef65" class="rounded mx-auto d-block" width="280" height="350" alt="">
-                  </div>
-                  <h5 class="fw-semibold mb-0">Фаимилия Имя Отчество</h5>
-                  <p class="text-muted">Кандидат заслуги</p>
-                </div>
-              </div>
-        
-              <div class="col">
-                <div class="d-flex flex-column gap-2 align-items-center">
-                  <div class="feature-icon-small d-inline-flex align-items-center justify-content-center fs-4 rounded-3">
-                    <img src="https://img.freepik.com/free-photo/portrait-of-confident-male-doctor_329181-12190.jpg?w=1060&t=st=1681923290~exp=1681923890~hmac=bbd2b02f8a43699e70bad22915d256d42e3d8a50f7050165740f0dd56d00ef65" class="rounded mx-auto d-block" width="280" height="350" alt="">
-                  </div>
-                  <h5 class="fw-semibold mb-0">Фаимилия Имя Отчество</h5>
-                  <p class="text-muted">Кандидат заслуги</p>
-                </div>
-              </div>
-        
-              <div class="col">
-                <div class="d-flex flex-column gap-2 align-items-center">
-                  <div class="feature-icon-small d-inline-flex align-items-center justify-content-center fs-4 rounded-3">
-                    <img src="https://img.freepik.com/free-photo/portrait-of-confident-male-doctor_329181-12190.jpg?w=1060&t=st=1681923290~exp=1681923890~hmac=bbd2b02f8a43699e70bad22915d256d42e3d8a50f7050165740f0dd56d00ef65" class="rounded mx-auto d-block" width="280" height="350" alt="">
-                  </div>
-                  <h5 class="fw-semibold mb-0">Фаимилия Имя Отчество</h5>
-                  <p class="text-muted">Кандидат заслуги</p>
-                </div>
-              </div>
 
+              {% for doc in doctor %}
               <div class="col">
                 <div class="d-flex flex-column gap-2 align-items-center">
                   <div class="feature-icon-small d-inline-flex align-items-center justify-content-center fs-4 rounded-3">
-                    <img src="https://img.freepik.com/free-photo/portrait-of-confident-male-doctor_329181-12190.jpg?w=1060&t=st=1681923290~exp=1681923890~hmac=bbd2b02f8a43699e70bad22915d256d42e3d8a50f7050165740f0dd56d00ef65" class="rounded mx-auto d-block" width="280" height="350" alt="">
+                    <img src="{{ doc.image }}" class="rounded mx-auto d-block" width="180" height="250" alt="">
                   </div>
-                  <h5 class="fw-semibold mb-0">Фаимилия Имя Отчество</h5>
-                  <p class="text-muted">Кандидат заслуги</p>
+                  <h5 class="fw-semibold mb-0" align="center">{{ doc.fio }}</h5>
+                  <p class="text-muted">{{ doc.job_title }}</p>
                 </div>
               </div>
+              {% endfor %}
+        
+              
             </div>
     </div>
 
