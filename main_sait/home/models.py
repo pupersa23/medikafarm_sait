@@ -26,17 +26,18 @@ class HomeBord(models.Model):
     choice = models.CharField(
         'Выбор порядка слайда',
         help_text='Выберети будет ли этот слайд первым',
-        max_length=250,
+        max_length=100,
         null=False,
         choices=CHOICES
     )
     title = models.TextField(
         'Заголовок объявления',
         help_text='Введите заголовок',
-        max_length=200
+        max_length=100
     )
     description = models.TextField(
         'Текст объявления',
+        max_length=350,
         help_text='Введите текст объявления',
     )
     url_for_button = models.TextField(
