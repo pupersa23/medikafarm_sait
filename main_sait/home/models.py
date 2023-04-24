@@ -12,10 +12,20 @@ class HomeTopInfo(models.Model):
         help_text='Введите номер телефона',
         max_length=50
     )
+    email_adm = models.TextField(
+        'Общая почта',
+        help_text='Введите общую почту',
+        max_length=100
+    )
+    email_sail = models.TextField(
+        'Почта отдела продаж',
+        help_text='Введите почта отдела продаж',
+        max_length=100
+    )
 
     class Meta:
-        verbose_name = 'Режим работы и телефон'
-        verbose_name_plural = 'Режим работы и телефон'
+        verbose_name = 'Режим работы, телефон, почты'
+        verbose_name_plural = 'Режим работы, телефон, почты'
 
 
 class HomeBord(models.Model):

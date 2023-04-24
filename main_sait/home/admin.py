@@ -4,7 +4,13 @@ from .models import HomeTopInfo, HomeBord, HomePriceCorp, HomeDoctor
 
 
 class HomeTopInfoAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'work_time', 'phone_number',)
+    list_display = (
+        'pk',
+        'work_time',
+        'phone_number',
+        'email_adm',
+        'email_sail',
+    )
 
 
 class HomeBordAdmin(admin.ModelAdmin):

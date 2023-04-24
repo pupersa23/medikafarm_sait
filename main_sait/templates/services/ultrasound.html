@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title%}
+УЗИ в Медицинский центр МедикаФарм
+{% endblock %}
+
+{% block content %}
+{% for inf in info %}
+<div class="container my-5">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1 text-body-emphasis">УЗИ диагностика</h1>
+        <p class="lead">Ультразвуковое обследование проводится с целью диагностики состояния мягких тканей, в том числе сосудов, мышц, сердца и других внутренних органов.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+            <!-- Button trigger modal -->
+            <a class="btn btn-success btn-lg" href="tel:{{ inf.phone_number }}" role="button">Записаться на прием</a>
+  
+            
+          </div>  
+    </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+          <img class="rounded-lg-3" src="{% static 'media/uzi.jpg' %}" alt="" width="520">
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+
+  <div class="container marketing">
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                
+                <img class="img-fluid rounded float-start p-3" src="{% static 'media/uzi2.jpg' %}" alt="" width="520">
+                <p class="lead">
+                    &nbsp;&nbsp;&nbsp;&nbsp;В ходе УЗ-исследования используется датчик, 
+                    который передает ультразвуковые волны высокой частоты. Они, подобно 
+                    эху, отражаются от органов и тканей тела. С помощью преобразователя 
+                    отраженные волны обрабатываются и передаются компьютерной системе, 
+                    изображение выводится на экран. Чтобы датчик прибора легко скользил 
+                    по телу, врач наносит на кожу пациента специальный гель.
+
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;УЗИ-диагностика применяется для изучения 
+                    внутренних структур тела — почек, печени, желудочно-кишечного 
+                    тракта, сердца, сосудов и других органов. С целью выявления 
+                    патологий мочеполовой системы женщинам выполняется УЗИ органов 
+                    малого таза и молочных желез. Особенно важна УЗИ-диагностика в 
+                    период беременности — она позволяет вести поэтапное наблюдение 
+                    за ростом и развитием плода и своевременно корректировать 
+                    обнаруженные отклонения от нормы. Кроме того, ультразвуковая 
+                    навигация используется для проведения биопсии — определения 
+                    точной локализации иглы для пункции молочной или щитовидной железы.
+
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;Технические возможности современных 
+                    аппаратов УЗИ позволяют врачу провести трехмерное 3-D 
+                    исследование — то есть оценить состояние органа в трехмерной 
+                    проекции. Чаще всего УЗИ используется для диагностики заболеваний:
+
+                         <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+                         alt="" 
+                         width="20" 
+                         height="20" 
+                         class="d-inline-block align-text-top">&nbsp;&nbsp;УЗИ молочных желез — 
+                         позволяет выявить доброкачественные и злокачественные патологии;
+                         <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+                         alt="" 
+                         width="20" 
+                         height="20" 
+                         class="d-inline-block align-text-top">&nbsp;&nbsp;УЗИ мочевого пузыря — 
+                         при подозрении на заболевания мочевыделительной системы;
+                         <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+                         alt="" 
+                         width="20" 
+                         height="20" 
+                         class="d-inline-block align-text-top">&nbsp;&nbsp;УЗИ брюшной полости — 
+                         позволяет оценить размеры внутренних органов и обнаружить отклонения
+                          (камни в желчном пузыре, опухоли);
+                          <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+                         alt="" 
+                         width="20" 
+                         height="20" 
+                         class="d-inline-block align-text-top">&nbsp;&nbsp;УЗИ органов малого 
+                         таза у женщин (в т.ч. матки и яичников) — позволяет определить причины 
+                         тазовых болей;
+                          <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+                         alt="" 
+                         width="20" 
+                         height="20" 
+                         class="d-inline-block align-text-top">&nbsp;&nbsp;УЗИ почек — 
+                         играет первостепенную роль в выявлении урологических проблем;
+                          <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+                         alt="" 
+                         width="20" 
+                         height="20" 
+                         class="d-inline-block align-text-top">&nbsp;&nbsp;УЗИ щитовидной железы — 
+                         позволяет обнаружить нарушения в работе эндокринной системы, в 
+                         том числе опухолевые процессы;
+                         <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+                         alt="" 
+                         width="20" 
+                         height="20" 
+                         class="d-inline-block align-text-top">&nbsp;&nbsp;УЗИ простаты, мошонки — 
+                         выявить доброкачественные и злокачественные патологии половых органов у мужчин.
+                </p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+    
+
+    <!-- /END THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal">Наши цены</h1>
+        <p class="fs-5 text-body-secondary">Обращение в наш медцентр, оснащенный высококлассным оборудованием, позволит вам получить точнейшую диагностику заболеваний на ранней стадии, что особенно ценно при обнаружении онкологических болезней.</p>
+      </div>
+<div class="container align-items-center">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Услуга</th>
+        <th scope="col">Цена, руб.</th>
+      </tr>
+    </thead>
+    {% for pric in price %}
+    <tbody>
+      <tr>
+        <td>{{ pric.description }}</td>
+        <td>{{ pric.price }}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+
+</div>
+<hr class="featurette-divider">
+<div class="row featurette">
+<h1 class="display-4 fw-normal">Схема проезда</h1>
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A32923ec50c84b444ea0967fa8cf5cf53e407a7d3aa3bea5c496b066b18a7b3fd&amp;width=1017&amp;height=570&amp;lang=ru_RU&amp;scroll=true"></script>
+</div>
+</div>
+
+
+
+{% endblock %}
