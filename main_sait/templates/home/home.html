@@ -9,11 +9,9 @@
 {% block content %}
 
 <div class="container-fluid">
-
 <div id="myCarousel" class="carousel slide text-center mt-3" data-bs-ride="carousel">
-  
+  {% for boar in board %}
   <div class="carousel-inner">
-    {% for boar in board %}
     <div class="carousel-item {% if boar.choice  == 'true' %}active{% endif %}">
       <svg class="bd-placeholder-img d-block w-100" 
            width="100%" 
@@ -22,16 +20,18 @@
            aria-hidden="true" 
            preserveAspectRatio="xMidYMid slice" 
            focusable="false"><rect width="100%" height="600" fill="#009e9e"></rect></svg>
-
+           
       <div class="container">
         <div class="carousel-caption">
           <h1>{{ boar.title }}</h1>
           <p>{{ boar.description|linebreaks }}</p>
           {% if boar.url_for_button != '' %}<p><a class="btn btn-lg btn-success" href="{{ boar.url_for_button }}">Перейти</a></p>{% endif %}
+          
         </div>
       </div>
     </div>
     {% endfor %}
+    
     
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
@@ -43,6 +43,7 @@
     <span class="visually-hidden">Следующее</span>
   </button>
 </div>
+
 
 </div>
   
@@ -99,10 +100,10 @@
           <button type="button" class="btn btn-success btn-lg px-4 me-md-2" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo">Задать вопрос врачу</button>
             
             <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
+              <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Новое сообщение</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Форма для заполнения</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -112,6 +113,15 @@
                         <input type="text" class="form-control" id="recipient-name">
                       </div>
                       <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Специалист:</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Выберете специалста кому хотите задать вопрос</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                     </div>
+                      <div class="mb-3">
                         <label for="message-text" class="col-form-label">Сообщение:</label>
                         <textarea class="form-control" id="message-text"></textarea>
                       </div>
@@ -119,7 +129,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                    <button type="button" class="btn btn-primary">Отправить</button>
+                    <button type="button" class="btn btn-success">Отправить</button>
                   </div>
                 </div>
               </div>
