@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title%}
+Анализы в Медицинский центр МедикаФарм
+{% endblock %}
+
+{% block content %}
+{% for inf in info %}
+<div class="container my-5">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Медицинские анализы</h1>
+        <p class="lead">Медицинские анализы (лабораторная диагностика) используются в 
+          качестве скрининга, диагностики и наблюдения за состоянием здоровья.
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+          alt="" 
+          width="20" 
+          height="20" 
+          class="d-inline-block align-text-top">&nbsp;&nbsp;Анализы покажут наличие заболевания или укажут на возможные риски.
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+          alt="" 
+          width="20" 
+          height="20" 
+          class="d-inline-block align-text-top">&nbsp;&nbsp;Анализы помогут определить причины возникших симптомов и провести диагностику
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+          alt="" 
+          width="20" 
+          height="20" 
+          class="d-inline-block align-text-top">&nbsp;&nbsp;Лабораторные тесты позволяют вести наблюдение при проведении лечения, контролировать состояние здоровья.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+            <!-- Button trigger modal -->
+            <a class="btn btn-success btn-lg" href="#scrollspyHeading1" role="button">Цены</a>
+            <a class="btn btn-success btn-lg" href="tel:{{ inf.phone_number }}" role="button">Записаться на прием</a>
+  
+            
+          </div>  
+    </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+          <img class="rounded-lg-3" src="{% static 'media/analisi.jpg' %}" alt="" width="520">
+      </div>
+    </div>
+  </div>
+
+  
+
+  <div class="container marketing">
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                
+                <img class="img-fluid rounded float-start p-3" src="{% static 'media/analisi2.jpg' %}" alt="" width="420">
+                <p class="lead">
+                  
+                  <h2>Медицинские анализы</h2>
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Наиболее часто в медицинской практике при проведении
+                   медицинского осмотра используются анализы крови и мочи. Для врача анализ 
+                   данных лабораторной диагностики — важная часть медицинской практики.
+
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;Несмотря на простоту сдачи анализов и доступность 
+                    услуги, перед сдачей анализов мы рекомендуем получение консультации 
+                    специалиста. Некоторые анализы могут иметь ограниченную полезность в 
+                    постановке диагноза. Определить правильный объем исследования, его 
+                    необходимость, особенности и правила сдачи поможет доктор.
+
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;Из пальца или из вены?
+
+                     <br>&nbsp;&nbsp;&nbsp;&nbsp;Взятие крови на анализ проводится в процедурном
+                      кабинете. Если для анализа достаточно небольшого объема крови, медсестра 
+                      выполняет забор крови из пальца. Как правило, так берут анализ кровь у 
+                      детей. Для взятия больших объемов крови, медсестра вводит в вену иглу и 
+                      набирает кровь в специальный стерильный контейнер. После этой манипуляции 
+                      на локтевой сгиб накладывается ватный тампон, место пункции бинтуется.
+
+
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;<h2>Общий анализ крови</h2>
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;Общий анализ крови показывает 
+                      уровень содержания различных типов кровяных клеток. 
+                      Проводится исследование содержания в крови эритроцитов, 
+                      лейкоцитов и тромбоцитов. Этот простой анализ обнаруживает 
+                      широкий спектр заболеваний, а также признаки инфекции и 
+                      иных нарушений.
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;<h2>Биохимический анализ крови</h2>
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;Биохимический анализ крови исследует 
+                      уровни химических веществ в крови. Как правило, с его помощью 
+                      выявляют нарушения в работе почек. эндокринные заболевания 
+                      (диабет) и другие.
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;<h2>Анализ на холестерин</h2>
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;Уровень холестерина в крови — важный 
+                      показатель в оценке риска развития сердечно-сосудистых 
+                      заболеваний. Когда холестерина в крови слишком много, 
+                      он может накапливаться на стенках артерий. Повышенный 
+                      уровень холестерина угрожает риском развития болезней 
+                      сердца и инсульта — двух распространенных причин смерти.
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;Если вам 20 лет — узнайте 
+                      свой базовый уровень холестерина и проверяйтесь каждые
+                       5 лет, если врач не указал на иное. Если вам больше
+                        40-ка — проводите такой анализ ежегодно. 
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;Повышенный уровень липидов в 
+                        крови при отсутствии других факторов риска, как правило,
+                         не связан с высокой вероятностью возникновения 
+                         заболеваний сердца и сосудов. Однако, такие 
+                         выводы должен делать врач. Получите консультацию 
+                         доктора для точной интерпретации результатов. При 
+                         сочетании высоких значений липидов в крови, избыточного
+                          веса, дисфункцией почек, повышенного давления, врач
+                          укажет вам на очень высокую степень риска развития
+                          заболевания. Вы можете снизить риски и управлять
+                          вашим уровнем холестерина. Вам будут даны рекомендации,
+                          как улучшить состояние здоровья или назначено лечение.
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;<h2>Онкомаркеры</h2>
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;Онкомаркеры — растворимые 
+                        молекулы в крови, вещества, естественно присутствующие 
+                        в организме. Их повышенный уровень может указывать на 
+                        наличие рака. Отдельные онкомаркеры ассоциированы с 
+                        определенным типом рака, другие — связаны с различными 
+                        типами рака. Важно знать, что повышенный онкомаркер 
+                        может наблюдаться и при заболеваниях, не связанных 
+                        с онкологией.
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;Онкомаркеры наиболее полезны 
+                        для наблюдения ответа на терапию, обнаружения отклонений 
+                        и возможных рецидивов. Каждый онкомаркер имеет переменный 
+                        профиль полезности для скрининга, установления диагноза, 
+                        прогноза, оценки ответа на терапию и мониторинг рецидива рака.
+
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;Анализ на онкомаркеры используют для:
+                      
+                        <br>
+                         <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+                         alt="" 
+                         width="20" 
+                         height="20" 
+                         class="d-inline-block align-text-top">&nbsp;&nbsp;Скрининг при повышенном риске развития онкологии 
+                         <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+                         alt="" 
+                         width="20" 
+                         height="20" 
+                         class="d-inline-block align-text-top">&nbsp;&nbsp;Обследование для установления диагноза
+                         <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+                         alt="" 
+                         width="20" 
+                         height="20" 
+                         class="d-inline-block align-text-top">&nbsp;&nbsp;Определение прогноза лечения
+                          <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'media/logo.png' %}" 
+                         alt="" 
+                         width="20" 
+                         height="20" 
+                         class="d-inline-block align-text-top">&nbsp;&nbsp;Контроль за ходом лечения, возможной ремиссией.
+                         <br>
+                         <br>&nbsp;&nbsp;&nbsp;&nbsp;Опухолевые маркеры не достаточно конкретны, чтобы 
+                         использовать их отдельно в диагностике рака. Ни один из анализов на 
+                         онкомаркеры не является на 100% достоверным — случаются как ложноположительные, 
+                         так и ложноотрицательные результаты.
+                </p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+    
+
+    <!-- /END THE FEATURETTES -->
+
+    <hr class="featurette-divider" id="scrollspyHeading1">
+    <div class="row featurette">
+
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal">Наши цены</h1>
+        <p class="fs-5 text-body-secondary">Обращение в наш медцентр, оснащенный высококлассным оборудованием, позволит вам получить точнейшую диагностику заболеваний на ранней стадии, что особенно ценно при обнаружении онкологических болезней.</p>
+      </div>
+<div class="container align-items-center">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="h-100 p-5 bg-light border rounded-3 shadow-lg">
+        <div class="row">
+          <div class="col">
+            <p>Информацию о ценах вы можете найти в прикрепленном файле или в разделе цен, используя поиск. Или звоните в клинику, чтобы узнать больше об анализах, подготовке и записи, телефон <a href="tel:{{ inf.phone_number }}" class="fw-bold text-primary-hover"><i class="bi bi-telephone me-2"></i>{{ inf.phone_number }}</a></p>
+            
+            {% for fil in file %}
+            <div class="d-grid gap-2 col-6 mx-auto">
+            <a href="/media/{{ fil.file }}" type="button" class="btn btn-lg btn-outline-danger" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM1.6 11.85H0v3.999h.791v-1.342h.803c.287 0 .531-.057.732-.173.203-.117.358-.275.463-.474a1.42 1.42 0 0 0 .161-.677c0-.25-.053-.476-.158-.677a1.176 1.176 0 0 0-.46-.477c-.2-.12-.443-.179-.732-.179Zm.545 1.333a.795.795 0 0 1-.085.38.574.574 0 0 1-.238.241.794.794 0 0 1-.375.082H.788V12.48h.66c.218 0 .389.06.512.181.123.122.185.296.185.522Zm1.217-1.333v3.999h1.46c.401 0 .734-.08.998-.237a1.45 1.45 0 0 0 .595-.689c.13-.3.196-.662.196-1.084 0-.42-.065-.778-.196-1.075a1.426 1.426 0 0 0-.589-.68c-.264-.156-.599-.234-1.005-.234H3.362Zm.791.645h.563c.248 0 .45.05.609.152a.89.89 0 0 1 .354.454c.079.201.118.452.118.753a2.3 2.3 0 0 1-.068.592 1.14 1.14 0 0 1-.196.422.8.8 0 0 1-.334.252 1.298 1.298 0 0 1-.483.082h-.563v-2.707Zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638H7.896Z"></path>
+              </svg>
+              Открыть
+            </a>
+          </div>
+          {% endfor %}
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
+<hr class="featurette-divider">
+<div class="row featurette">
+<h1 class="display-4 fw-normal">Схема проезда</h1>
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A32923ec50c84b444ea0967fa8cf5cf53e407a7d3aa3bea5c496b066b18a7b3fd&amp;width=1017&amp;height=570&amp;lang=ru_RU&amp;scroll=true"></script>
+</div>
+</div>
+{% endfor %}
+
+
+{% endblock %}
