@@ -45,8 +45,10 @@ def fluromobil(request):
     template = 'services/fluromobil.html'
     info = SAIT_INFO
     price = Fluromobil.objects.all()
+    description = Fluromobil.objects.get(pk=1)
     context = {
         'info': info,
         'price': price,
+        'description': description,
     }
     return render(request, template, context)
