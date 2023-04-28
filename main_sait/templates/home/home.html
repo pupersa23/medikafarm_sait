@@ -9,6 +9,19 @@
 
 {% block content %}
 
+{% if messages %}
+        {% for message in messages %}
+        <div class="container text-center">
+          <div class="row p-3">
+            <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            </div>
+                </div>
+        {% endfor %}
+    {% endif %}
+
 <div class="container-fluid">
 <div id="myCarousel" class="carousel slide text-center mt-3" data-bs-ride="carousel">
   {% for boar in board %}
@@ -90,7 +103,6 @@
       </div>
     </div>
 
-
     <div class="container px-4 py-5">
       <h2 class="pb-2">Наши специалисты</h2>
       <p class="text-muted ">В клинике «МедикаФарм» ведут консультативный прием доктора различных специальностей, все обладают опытом и знаниями в своей области. На консультации врач оценивает состояние здоровья, собирает анамнез, при необходимости проводит или назначает обследования. После определения диагноза даются рекомендации по лечению.</p>
@@ -141,24 +153,6 @@
                 </div>
               </div>
             </div>
-            {% if HttpResponse  == ok %}
-            <div class="modal fade" id="sucsess" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="sucsess">Modal 1</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Show a second modal and hide this one with the button below.
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {% endif %}
           </div>
 
             <div class="row row-cols-1 align-items-stretch g-4 py-5">

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.contrib import messages
 
 from .models import HomeTopInfo, HomeBord, HomePriceCorp, HomeDoctor
 from .forms import ContactDoctorForm
@@ -26,11 +26,12 @@ def index(request):
             message = "\n".join(body.values())
             try:
                 send_mail(subject, message,
-                          'ryazanov745@gmail.com',
+                          body['email_address'],
                           ['ryazanov745@gmail.com'])
-            except BadHeaderError:
-                return HttpResponse('Найден некорректный заголовок')
-            return HttpResponse()
+                messages.success(request, 'Сообщение отправлено')
+            except Exception:
+                messages.error(request, 'Сообщение не отправлено')
+            return redirect('home:index')
 
     form = ContactDoctorForm()
     context = {
