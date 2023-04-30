@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title%}
+989y Гостайна в Медицинский центр МедикаФарм
+{% endblock %}
+
+{% block content %}
+{% for inf in info %}
+
+<div class="container col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="{% static 'media/tajna.jpg' %}" class="d-block mx-lg-auto border rounded-3 shadow-lg img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Медсправка 989н для допуска к государственной тайне</h1>
+      <p class="lead">Это документ, который выступает в качестве подтверждения 
+        того, что у Вас нет каких-либо противопоказаний по состоянию здоровья 
+        и Вы можете осуществлять трудовую деятельность с использованием сведений, 
+        содержащих государственную тайну. Мы выдаем справку установленного образца. 
+        При необходимости предоставляем копию нашей лицензии на осуществление 
+        подобных медосмотров и оформление справок.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Наименование услуги</th>
+              <th scope="col">Цена, руб.</th>
+            </tr>
+          </thead>
+          {% for pric in price %}
+          <tbody>
+            <tr>
+              <td>{{ pric.title|linebreaks }}</td>
+              <td>{{ pric.price }}</td>
+            </tr>
+          </tbody>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container marketing">
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                
+                <img class="img-fluid rounded float-start p-3" src="{% static 'media/tajna2.jpg' %}" alt="" width="420">
+                <p class="lead">
+                  
+                  <h2>Кому нужна справка 989н?</h2>
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Обычным гражданам и госслужащим, 
+                  желающим быть допущенными к информации, входящей в гостайну, 
+                  необходимо доказать отсутствие противопоказаний с медицинской 
+                  точки зрения. Только тогда получится оформить медсправку для 
+                  работы с гостайной. В упомянутом Приказе приведен точный 
+                  список, в него входят следующие виды отраслевой деятельности:
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;<li>
+                    внутренняя и внешняя экономика,
+                  </li>
+                  <li>
+                    наука,
+                  </li>
+                  <li>
+                    разведка,
+                  </li>
+                  <li>
+                    политика,
+                  </li>
+                  <li>
+                    ОРД.
+                  </li>
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;<h2>Что нужно выполнить для получения?</h2>
+
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;Прийти в клинику в удобное для Вас 
+                      время, пройти осмотры следующих специалистов:
+
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;<li>
+                        психиатра
+                      </li>
+                      <li>
+                        невролога
+                      </li>
+                      <li>
+                        нарколога
+                      </li>
+                    
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;С собой нужно взять паспорт. 
+                      Перечисленные врачи проводят осмотр пациента и выдают свои 
+                      заключения. Результаты заносятся в амбулаторную карту. 
+                      Если противопоказания не обнаружены, то комиссия в составе 
+                      3 членов проставляет свои подписи и печать медучреждения.
+
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;<h2>Противопоказания?</h2>
+
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;Всего утверждено 51 причины для 
+                      отказа в выдаче разрешения. В приказе приведены эти 
+                      коды по МКБ. В их числе:
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;<li>
+                        эпилепсия,
+                      </li>
+                      <li>
+                        расстройства психики,
+                      </li>
+                      <li>
+                        шизофрения,
+                      </li>
+                      <li>
+                        синдром зависимости и отмены приема психотропных веществ,
+                      </li>
+                      <li>
+                        аффективное расстройство и т.д.
+                      </li>
+
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;<h2>Срок действия справки для гостайны</h2>
+
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;Справка для гостайны по форме 989н 
+                      обязательно содержит дату выдачи документа. Она фиксируется в 
+                      регистрационных бланках медучреждения. Срок действия справки 
+                      для гостайны ведется именно с этой даты и составляет месяцев.
+                        
+                </p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+    
+
+    <!-- /END THE FEATURETTES -->
+<hr class="featurette-divider">
+<div class="row featurette">
+<h1 class="display-4 fw-normal">Схема проезда</h1>
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A32923ec50c84b444ea0967fa8cf5cf53e407a7d3aa3bea5c496b066b18a7b3fd&amp;width=1017&amp;height=570&amp;lang=ru_RU&amp;scroll=true"></script>
+</div>
+</div>
+{% endfor %}
+
+
+{% endblock %}

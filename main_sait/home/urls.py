@@ -6,4 +6,5 @@ app_name = 'home'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('politika-konfidencialnosti/', views.konfiden, name='konfiden'),
 ]

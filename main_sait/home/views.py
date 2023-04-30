@@ -6,9 +6,12 @@ from .models import HomeTopInfo, HomeBord, HomePriceCorp, HomeDoctor
 from .forms import ContactDoctorForm
 
 
+SAIT_INFO = HomeTopInfo.objects.all()
+
+
 def index(request):
     template = 'home/home.html'
-    info = HomeTopInfo.objects.all()
+    info = SAIT_INFO
     board = HomeBord.objects.all()
     price = HomePriceCorp.objects.all()
     doctor = HomeDoctor.objects.all()
@@ -40,5 +43,14 @@ def index(request):
         'price': price,
         'doctor': doctor,
         'form': form,
+    }
+    return render(request, template, context)
+
+
+def konfiden(request):
+    template = 'home/konfiden.html'
+    info = SAIT_INFO
+    context = {
+        'info': info,
     }
     return render(request, template, context)

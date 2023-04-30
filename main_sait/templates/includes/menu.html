@@ -12,7 +12,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" 
                href="/" 
@@ -20,7 +20,7 @@
                role="button" 
                data-bs-toggle="dropdown" 
                aria-expanded="true">
-              О клинике
+               &nbsp;&nbsp;О клинике
             </a>
             <ul class="dropdown-menu" aria-labelledby="menu1">
               <li><a class="dropdown-item" href="#">Статьи</a></li>
@@ -38,7 +38,7 @@
                role="button" 
                data-bs-toggle="dropdown" 
                aria-expanded="false">
-              Услуги
+               &nbsp;&nbsp;Услуги
             </a>
             <ul class="dropdown-menu" aria-labelledby="menu2">
               <li><a class="dropdown-item" href="{% url 'services:ultrasound' %}">УЗИ</a></li>
@@ -54,7 +54,7 @@
                role="button" 
                data-bs-toggle="dropdown" 
                aria-expanded="false">
-              Врачи
+               &nbsp;&nbsp;Врачи
             </a>
             <ul class="dropdown-menu" aria-labelledby="menu3">
               <li><a class="dropdown-item" href="#">2Второе меню</a></li>
@@ -72,7 +72,7 @@
                role="button" 
                data-bs-toggle="dropdown" 
                aria-expanded="false">
-              Профосмотры
+               &nbsp;&nbsp;Профосмотры
             </a>
             <ul class="dropdown-menu" aria-labelledby="menu4">
               <li><a class="dropdown-item" href="#">3Второе меню</a></li>
@@ -90,26 +90,26 @@
                role="button" 
                data-bs-toggle="dropdown" 
                aria-expanded="false">
-              Справки
+               &nbsp;&nbsp;Справки
             </a>
             <ul class="dropdown-menu" aria-labelledby="menu10">
-              <li><a class="dropdown-item" href="#">3Второе меню</a></li>
-              <li><a class="dropdown-item" href="#">Второе меню</a></li>
-              <li><a class="dropdown-item" href="#">Второе меню</a></li>
-              <li><a class="dropdown-item" href="#">Второе меню</a></li>
+              <li><a class="dropdown-item" href="{% url 'spravki:gibdd' %}">ГИБДД (ГАИ) 003-В/у</a></li>
+              <li><a class="dropdown-item" href="{% url 'spravki:gims' %}">Управление судами (ГИМС)</a></li>
+              <li><a class="dropdown-item" href="{% url 'spravki:gsy' %}">Госслужба 001-ГС/у</a></li>
+              <li><a class="dropdown-item" href="{% url 'spravki:gstayna' %}">Гостайна 989н</a></li>
               <li><a class="dropdown-item" href="#">Второе меню</a></li>
               <li><a class="dropdown-item" href="#">Второе меню</a></li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item">
             <a href="#" class="nav-link px-2 text-blak">Медкнижки</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item">
             <a href="#" class="nav-link px-2 text-blak">Цены</a>
           </li>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link px-2 text-blak">Контакты</a>
-          <li class="nav-item dropdown">
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-blak">Контакты&nbsp;&nbsp;</a>
+          <li class="nav-item">
             <a class="btn btn-danger" href="#" role="button">Акции</a> 
           &nbsp;
            &nbsp;

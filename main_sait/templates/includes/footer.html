@@ -49,12 +49,12 @@
 
 					<!-- Link block -->
 					<div class="col-6 col-md-3">
-						<h5 class="mb-2 mb-md-4">Медицинские книжки</h5>
+						<h5 class="mb-2 mb-md-4">Справки</h5>
 						<ul class="nav flex-column text-primary-hover">
-							<li class="nav-item"><a class="nav-link text-muted" href="#">Страница</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="#">Страница</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="#">Страница</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="#">Страница</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:gibdd' %}">ГИБДД (ГАИ) 003-В/у</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:gims' %}">Управление судами (ГИМС)</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:gsy' %}">Госслужба 001-ГС/у</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:gstayna' %}">Гостайна 989н</a></li>
 							<li class="nav-item"><a class="nav-link text-muted" href="#">Страница</a></li>
 							<li class="nav-item"><a class="nav-link text-muted" href="#">Страница</a></li>
 						</ul>
@@ -81,8 +81,6 @@
 							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'services:rentgen' %}">Рентген</a></li>
 							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'services:analisi' %}">Анализы</a></li>
 							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'services:fluromobil' %}">Аренда флюоромобиля</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="#">Страница</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="#">Страница</a></li>
 						</ul>
 					</div>
 
@@ -109,7 +107,7 @@
 					<div class="nav mt-2 mt-lg-0">
 						<ul class="list-inline text-primary-hover mx-auto mb-0">
 							<li class="list-inline-item me-0"><a class="nav-link py-1 text-muted" href="#">Нормативно-правовые документы</a></li>
-							<li class="list-inline-item me-0"><a class="nav-link py-1 text-muted" href="#">Политика конфиденциальности</a></li>
+							<li class="list-inline-item me-0"><a class="nav-link py-1 text-muted" href="{% url 'home:konfiden' %}">Политика конфиденциальности</a></li>
 						</ul>
 					</div>
 				</div>
