@@ -1,12 +1,11 @@
-from django.shortcuts import render, redirect
-from django.core.mail import send_mail
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.shortcuts import redirect, render
 
-
-from .models import UltraSound, Rentgen, Analisi, Fluromobil
 from home.models import HomeTopInfo
-from .forms import ArendaFlgForm
 
+from .forms import ArendaFlgForm
+from .models import Analisi, Fluromobil, Rentgen, UltraSound
 
 SAIT_INFO = HomeTopInfo.objects.all()
 

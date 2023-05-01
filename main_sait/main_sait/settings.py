@@ -1,6 +1,6 @@
 import os
-from django.contrib.messages import constants as messages
 
+from django.contrib.messages import constants as messages
 from dotenv import load_dotenv
 
 load_dotenv()

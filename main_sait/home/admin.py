@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import HomeTopInfo, HomeBord, HomePriceCorp, HomeDoctor
+from .models import HomeBord, HomeDoctor, HomePriceCorp, HomeTopInfo
 
 
 class HomeTopInfoAdmin(admin.ModelAdmin):

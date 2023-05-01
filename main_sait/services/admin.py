@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import UltraSound, Rentgen, Analisi, Fluromobil
+from .models import Analisi, Fluromobil, Rentgen, UltraSound
 
 
 class UltraSoundAdmin(admin.ModelAdmin):

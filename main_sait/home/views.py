@@ -1,10 +1,9 @@
-from django.shortcuts import render, redirect
-from django.core.mail import send_mail
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.shortcuts import redirect, render
 
-from .models import HomeTopInfo, HomeBord, HomePriceCorp, HomeDoctor
 from .forms import ContactDoctorForm
-
+from .models import HomeBord, HomeDoctor, HomePriceCorp, HomeTopInfo
 
 SAIT_INFO = HomeTopInfo.objects.all()
 
