@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title%}
+086/у справки в Медицинский центр МедикаФарм
+{% endblock %}
+
+{% block content %}
+{% for inf in info %}
+
+<div class="container col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="{% static 'media/086y.jpg' %}" class="d-block mx-lg-auto border rounded-3 shadow-lg img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Справка для приема на работу 086/у</h1>
+      <p class="lead">Форма 086у – стандартная справка, которую требуют 
+        при поступлении на работу. Бланк утвержден Минздравом России в 2014 году. 
+        <br> Справка важна как допуск работе и гарантия, что проблемы со 
+        здоровьем не приведут к несчастным случаям в процессе трудовой деятельности.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Наименование услуги</th>
+              <th scope="col">Цена, руб.</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <tr>
+              <td>{{ price.title|linebreaks }}</td>
+              <td>{{ price.price }}</td>
+            </tr>
+          </tbody>
+          
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container marketing">
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                
+                <img class="img-fluid rounded float-start p-3" src="{% static 'media/gai2.webp' %}" alt="" width="420">
+                <p class="lead">
+                  
+                  <h2>Особенности оформления справки для приема на работу 086</h2>
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Справка на работу 086 оформляется в 
+                  поликлинике по месту регистрации или в частных аккредитованных 
+                  медцентрах. В нашем учреждении вы можете оперативно пройти всех 
+                  необходимых специалистов, сдать анализы, получить необходимый 
+                  документ всего за {{ price.price }} рублей.
+
+                  
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Форма 086 содержит следующие сведения:
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;<li>
+                    паспортные данные;
+                  </li>
+                  <li>
+                    результаты флюорографии, не позже, чем годичной давности;
+                  </li>
+                  <li>
+                    прививочные сертификаты;
+                  </li>
+                  <li>
+                    осмотры узких специалистов (невролог, хирург, оториноларинголог, офтальмолог);
+                  </li>
+                  <li>
+                    результаты анализов (клинический анализ крови и мочи).
+                  </li>
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Информация подытоживается врачом-терапевтом, 
+                  делается вывод о профпригодности и соответствии планируемой должности. 
+                  Для оформления необходимо предоставить паспорт и, если есть, 
+                  флюорографию, рентген или КТ легких, прививочный лист, результаты 
+                  имеющихся анализов.
+
+                                        
+                        
+                </p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+    
+
+    <!-- /END THE FEATURETTES -->
+<hr class="featurette-divider">
+<div class="row featurette">
+<h1 class="display-4 fw-normal">Схема проезда</h1>
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A32923ec50c84b444ea0967fa8cf5cf53e407a7d3aa3bea5c496b066b18a7b3fd&amp;width=1017&amp;height=570&amp;lang=ru_RU&amp;scroll=true"></script>
+</div>
+</div>
+{% endfor %}
+
+
+{% endblock %}

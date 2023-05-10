@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import (Bassein, Gibdd, Gims, Gstayna, Gsy, Spravka086_1,
-                     Spravka095_1)
+                     Spravka095_1, Travel)
 
 
 class GibdddAdmin(admin.ModelAdmin):
@@ -21,7 +21,7 @@ class GstaynaAdmin(admin.ModelAdmin):
 
 
 class Spravka086_1_Admin(admin.ModelAdmin):
-    list_display = ('pk', 'title', 'price',)
+    list_display = ('pk', 'choice', 'title', 'price',)
 
 
 class Spravka095_1_Admin(admin.ModelAdmin):
@@ -29,7 +29,11 @@ class Spravka095_1_Admin(admin.ModelAdmin):
 
 
 class BasseinAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'title', 'price',)
+    list_display = ('pk', 'choice', 'title', 'price',)
+
+
+class TravelAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'choice', 'title', 'price',)
 
 
 admin.site.register(Gibdd, GibdddAdmin)
@@ -39,3 +43,4 @@ admin.site.register(Gstayna, GstaynaAdmin)
 admin.site.register(Spravka086_1, Spravka086_1_Admin)
 admin.site.register(Spravka095_1, Spravka095_1_Admin)
 admin.site.register(Bassein, BasseinAdmin)
+admin.site.register(Travel, TravelAdmin)

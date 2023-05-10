@@ -70,6 +70,20 @@ class Gstayna(models.Model):
 
 
 class Spravka086_1(models.Model):
+    CHOICES = (
+        ('dlya-meditsinskikh-napravleniy', 'Медики'),
+        ('na-dolzhnost-sudi', 'Судья'),
+        ('dlya-raboty', 'Обычная'),
+        ('dlya-postupleniya', 'Институт'),
+    )
+    choice = models.CharField(
+        'Выбор справки 086',
+        help_text='''Выберети нужную справку для
+                   правильного отображения страницы''',
+        max_length=100,
+        null=True,
+        choices=CHOICES
+    )
     title = models.TextField(
         'Наименование услуги',
         help_text='Введите наименование услуги',
@@ -104,6 +118,21 @@ class Spravka095_1(models.Model):
 
 
 class Bassein(models.Model):
+    CHOICES = (
+        ('bassein', 'Бассейн'),
+        ('sport', 'Спорт'),
+        ('sabeg', 'Забег'),
+        ('sapliv', 'Заплыв'),
+        ('marafon', 'Марафон'),
+    )
+    choice = models.CharField(
+        'Выбор справки спорт',
+        help_text='''Выберети нужную справку для
+                   правильного отображения страницы''',
+        max_length=100,
+        null=True,
+        choices=CHOICES
+    )
     title = models.TextField(
         'Наименование услуги',
         help_text='Введите наименование услуги',
@@ -116,5 +145,35 @@ class Bassein(models.Model):
     )
 
     class Meta:
-        verbose_name = 'Справки Бассейн'
-        verbose_name_plural = 'Справки Бассейн'
+        verbose_name = 'Справки для спорта'
+        verbose_name_plural = 'Справки для спорта'
+
+
+class Travel(models.Model):
+    CHOICES = (
+        ('sankarta', 'Санкарта'),
+        ('sanatoriy', 'Санаторий'),
+        ('sagranica', 'Заграница'),
+    )
+    choice = models.CharField(
+        'Выбор справки для путешествий',
+        help_text='''Выберети нужную справку для
+                   правильного отображения страницы''',
+        max_length=100,
+        null=True,
+        choices=CHOICES
+    )
+    title = models.TextField(
+        'Наименование услуги',
+        help_text='Введите наименование услуги',
+        max_length=100
+    )
+    price = models.TextField(
+        'Цена',
+        help_text='Введите цену справки',
+        max_length=50
+    )
+
+    class Meta:
+        verbose_name = 'Справки для поездок'
+        verbose_name_plural = 'Справки для поездок'

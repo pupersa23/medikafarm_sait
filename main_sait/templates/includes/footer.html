@@ -38,7 +38,7 @@
 				<div class="row g-4">
 					<!-- Link block -->
 					<div class="col-6 col-md-3">
-						<h5 class="mb-2 mb-md-4">Главная страница</h5>
+						<h5 class="mb-2 mb-md-4"><a class="nav-link" href="/">Главная страница</a></h5>
 						<ul class="nav flex-column text-primary-hover">
 							<li class="nav-item"><a class="nav-link text-muted" href="#">О клинике</a></li>
 							<li class="nav-item"><a class="nav-link text-muted" href="#">Контакты</a></li>
@@ -55,9 +55,10 @@
 							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:gims' %}">Управление судами (ГИМС)</a></li>
 							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:gsy' %}">Госслужба 001-ГС/у</a></li>
 							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:gstayna' %}">Гостайна 989н</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:spravki_086' %}">Справки 086/у</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:student_095' %}">Справка 095/у</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:bassein' %}">Справка для бассейна</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:spravki_086' %}">Справка 086/у</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:student_095' %}">Справка 095/у (студентам)</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:spravki_sport' %}">Справка для спорта</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'spravki:spravki_travel' %}">Справка для поездок</a></li>
 						</ul>
 					</div>
 									

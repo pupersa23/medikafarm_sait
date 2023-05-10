@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title%}
+Справка для путевки 070/у в Медицинский центр МедикаФарм
+{% endblock %}
+
+{% block content %}
+{% for inf in info %}
+
+<div class="container col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="{% static 'media/070y.webp' %}" class="d-block mx-lg-auto border rounded-3 shadow-lg img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Справка для путевки 070/у</h1>
+      <p class="lead">Если в ваших планах стоит посещение оздоровительного 
+        учреждения (пансионат, санаторий, лагерь), то Вам будет необходимо 
+        направление от врача для проведения определенных процедур. Чтобы 
+        посещение оздоровительного учреждения было оправдано, необходимо 
+        оформить справку по форме 070У для санатория.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Наименование услуги</th>
+              <th scope="col">Цена, руб.</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <tr>
+              <td>{{ price.title|linebreaks }}</td>
+              <td>{{ price.price }}</td>
+            </tr>
+          </tbody>
+          
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container marketing">
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                
+                
+                <p class="lead">
+                  
+                  <h2>Порядок прохождения медосмотра:</h2>
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Оформить справку для путевки 
+                  разрешено на бумажном бланке, тогда его заверяют подписью 
+                  врача и печатью медучреждения. Допускается использование 
+                  электронных форм, заверяют их электронной подписью медорганизации.
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Обычно требуется пройти 
+                  медосмотр у всех профильных специалистов, чтобы 
+                  подтвердить вносимый в документ диагноз. Информация 
+                  берется из амбулаторной карты пациента.
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;В медицинском центре «МедикаФарм» 
+                  штат врачей всех специальностей. У нас можно очень быстро 
+                  пройти медкомиссию для справки для путевки в санаторий. 
+                  Результат – в день визита.
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;<h2>Куда подают справку для санатория 070/у?</h2>
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Без этого документа не подтвердить, 
+                  что человек нуждается в санаторно-курортном лечении. Пациент, 
+                  сумевший успешно получить справку для путевки в санаторий, 
+                  подает его в органы соцзащиты по месту жительства, либо 
+                  работодателю. Льготные категории граждан получают частичное 
+                  или 100% возмещение стоимости путевки.
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;<h2>Срок действия</h2>
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Целесообразнее делать перед 
+                  выездом на лечение. Справка для путевки в санаторий ф. 
+                  070/у действительна в течение 12 месяцев со дня оформления. 
+                  На момент завершения пребывания в санатории срок действия 
+                  справки не должен истечь!
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;<h2>Противопоказания для получения:</h2>
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Утверждены Приказом Минздравсоцразвития №281н от 05.05.2016 г. Сюда вошли:
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;<li>
+                    острые инфекционные заболевания,
+                  </li>
+                  <li>
+                    эндометриоз,
+                  </li>
+                  <li>
+                    ЗППП,
+                  </li>
+                  <li>
+                    туберкулез,
+                  </li>
+                  <li>
+                    онкология,
+                  </li>
+                  <li>
+                    эпилепсия и ряд других.
+                  </li>
+                      
+                </p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+    
+
+    <!-- /END THE FEATURETTES -->
+<hr class="featurette-divider">
+<div class="row featurette">
+<h1 class="display-4 fw-normal">Схема проезда</h1>
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A32923ec50c84b444ea0967fa8cf5cf53e407a7d3aa3bea5c496b066b18a7b3fd&amp;width=1017&amp;height=570&amp;lang=ru_RU&amp;scroll=true"></script>
+</div>
+</div>
+{% endfor %}
+
+
+{% endblock %}
