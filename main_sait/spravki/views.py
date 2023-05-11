@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from home.models import HomeTopInfo
 
 from .models import (Bassein, Gibdd, Gims, Gstayna, Gsy, Spravka086_1,
-                     Spravka095_1, Travel)
+                     Spravka095_1, Travel, Bolnichnij)
 
 SAIT_INFO = HomeTopInfo.objects.all()
 
@@ -143,6 +143,24 @@ def spravki_sport_datail(request, choice):
             'price': price,
         }
         return render(request, template, context)
+    elif choice == 'sapliv':
+        template = 'spravki/sport/sapliv.html'
+        info = SAIT_INFO
+        price = get_object_or_404(Bassein, choice=choice)
+        context = {
+            'info': info,
+            'price': price,
+        }
+        return render(request, template, context)
+    elif choice == 'sabeg':
+        template = 'spravki/sport/sabeg.html'
+        info = SAIT_INFO
+        price = get_object_or_404(Bassein, choice=choice)
+        context = {
+            'info': info,
+            'price': price,
+        }
+        return render(request, template, context)
 
 
 def spravki_travel(request):
@@ -184,3 +202,14 @@ def spravki_travel_datail(request, choice):
             'price': price,
         }
         return render(request, template, context)
+
+
+def bolnichnij(request):
+    template = 'spravki/bolnichnij.html'
+    info = SAIT_INFO
+    price = Bolnichnij.objects.all()
+    context = {
+        'info': info,
+        'price': price,
+    }
+    return render(request, template, context)

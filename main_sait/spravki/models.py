@@ -123,7 +123,6 @@ class Bassein(models.Model):
         ('sport', 'Спорт'),
         ('sabeg', 'Забег'),
         ('sapliv', 'Заплыв'),
-        ('marafon', 'Марафон'),
     )
     choice = models.CharField(
         'Выбор справки спорт',
@@ -177,3 +176,20 @@ class Travel(models.Model):
     class Meta:
         verbose_name = 'Справки для поездок'
         verbose_name_plural = 'Справки для поездок'
+
+
+class Bolnichnij(models.Model):
+    title = models.TextField(
+        'Наименование услуги',
+        help_text='Введите наименование услуги',
+        max_length=100
+    )
+    price = models.TextField(
+        'Цена',
+        help_text='Введите цену справки',
+        max_length=50
+    )
+
+    class Meta:
+        verbose_name = 'Больничные листы'
+        verbose_name_plural = 'Больничные листы'

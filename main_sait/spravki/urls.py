@@ -28,4 +28,5 @@ urlpatterns = [
         views.spravki_travel_datail,
         name='spravki_travel_datail'
     ),
+    path('bolnichnyj-list/', views.bolnichnij, name='bolnichnij'),
 ]

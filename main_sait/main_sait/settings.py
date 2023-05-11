@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'services',
     'home',
     'spravki',
+    'profi',
 ]
 
 MIDDLEWARE = [

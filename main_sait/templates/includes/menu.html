@@ -74,7 +74,7 @@
                &nbsp;&nbsp;Профосмотры
             </a>
             <ul class="dropdown-menu" aria-labelledby="menu4">
-              <li><a class="dropdown-item" href="#">3Второе меню</a></li>
+              <li><a class="dropdown-item" href="{% url 'profi:predvaritelnie' %}">Предварительный медосмотр</a></li>
               <li><a class="dropdown-item" href="#">Второе меню</a></li>
               <li><a class="dropdown-item" href="#">Второе меню</a></li>
               <li><a class="dropdown-item" href="#">Второе меню</a></li>
@@ -100,6 +100,7 @@
               <li><a class="dropdown-item" href="{% url 'spravki:student_095' %}">Справка 095/у (студентам)</a></li>
               <li><a class="dropdown-item" href="{% url 'spravki:spravki_sport' %}">Справка для спорта</a></li>
               <li><a class="dropdown-item" href="{% url 'spravki:spravki_travel' %}">Справка для поездок</a></li>
+              <li><a class="dropdown-item" href="{% url 'spravki:bolnichnij' %}">Официальные больничные листы</a></li>
             </ul>
           </li>
           <li class="nav-item">
