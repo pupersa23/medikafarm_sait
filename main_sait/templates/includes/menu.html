@@ -75,11 +75,10 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="menu4">
               <li><a class="dropdown-item" href="{% url 'profi:predvaritelnie' %}">Предварительный медосмотр</a></li>
-              <li><a class="dropdown-item" href="#">Второе меню</a></li>
-              <li><a class="dropdown-item" href="#">Второе меню</a></li>
-              <li><a class="dropdown-item" href="#">Второе меню</a></li>
-              <li><a class="dropdown-item" href="#">Второе меню</a></li>
-              <li><a class="dropdown-item" href="#">Второе меню</a></li>
+              <li><a class="dropdown-item" href="{% url 'profi:pereodicheskiy' %}">Периодический медосмотр</a></li>
+              <li><a class="dropdown-item" href="{% url 'profi:vneocherednoy' %}">Внеочередной медосмотр</a></li>
+              <li><a class="dropdown-item" href="{% url 'profi:psihiatricheskoe' %}">Психиатрическое освидетельствование</a></li>
+              <li><a class="dropdown-item" href="{% url 'profi:predsmenniy' %}">Предрейсовый медосмотр</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -110,17 +109,17 @@
             <a href="#" class="nav-link px-2 text-blak">Цены</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-blak">Контакты&nbsp;&nbsp;</a>
-          <li class="nav-item">
-            <a class="btn btn-danger" href="#" role="button">Акции</a> 
-          &nbsp;
-           &nbsp;
-          <li>
+            <a href="#" class="nav-link px-2 text-blak">Контакты</a>
+          <li class="nav-item text-bg-success rounded-3">
+            <a href="#" class="nav-link px-2 text-white">Акции</a> 
+          </ul>  
+          &nbsp;&nbsp;
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Поиск">
               <button class="btn btn-outline-success" type="submit">Поиск</button>
             </form> 
-          </li>                  
+           
+                       
       </div>
     </div>
   </nav>

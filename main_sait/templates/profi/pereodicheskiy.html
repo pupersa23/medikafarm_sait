@@ -1,0 +1,378 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block title%}
+Периодический профосмотр в Медицинский центр МедикаФарм
+{% endblock %}
+
+{% block content %}
+
+{% if messages %}
+        {% for message in messages %}
+        <div class="container text-center">
+          <div class="row p-3">
+            <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            </div>
+                </div>
+        {% endfor %}
+    {% endif %}
+
+{% for inf in info %}
+
+<div class="container">
+<div class="px-4 pt-5 my-5 text-center">
+  <h1 class="display-4 fw-bold text-body-emphasis">Периодический медицинский осмотр работников</h1>
+  <div class="col-lg-8 mx-auto">
+    <p class="lead mb-4">Периодические медицинские осмотры – обязательное медицинское 
+      обследование, которое должны проходить работники определенных сфер не реже 1 
+      раза в год или 2 года. Перед прохождением периодического медосмотра сотрудники 
+      получают направление (справку) по приказу 29 н от работодателя. Работник 
+      должен быть заведомо уведомлен о дате и времени прохождения медкомиссии.</p>
+    
+  </div>
+<div class="d-grid gap-2 d-sm-flex justify-content-sm-center pb-2">
+  <button type="button" class="btn btn-success btn-lg px-4 me-md-2" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo">Заключить договор</button>
+  <a class="btn btn-success btn-lg" href="tel:{{ inf.phone_number }}" role="button">Связаться с отделом продаж</a>
+</div>
+            
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Форма для заполнения</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="form-floating mb-3">
+              {{ form.first_name|add_class:"form-control"|attr:"placeholder:Введите имя" }}
+              <label for="id_first_name">Имя:</label>
+            </div>
+            <div class="form-floating mb-3">
+              {{ form.email_address|add_class:"form-control"|attr:"placeholder:Введите почту" }}
+              <label for="id_email_address">Email:</label>
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text">+7</span>
+              <div class="form-floating">
+                {{ form.phone_number|add_class:"form-control"|attr:"placeholder:Введите телефон" }}
+                <label for="id_phone_number">Номер телефона:</label>
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              {{ form.title|add_class:"form-control"|attr:"placeholder:Введите тему заявки" }}
+              <label for="id_title">Тема заявки:</label>
+            </div>
+            <div class="form-floating mb-3">
+              {{ form.message|add_class:"form-control"|attr:"placeholder:Введите реквизиты"|attr:"style:height:100px" }}
+              <label for="id_message">Введите реквизиты:</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-success" data-bs-target="sucsess">Отправить</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="container">
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Мужчины</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">от {{ price_men.price }}&#8381;<small class="text-body-secondary fw-light">/за человека</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>{{ price_men.description|linebreaks }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Женщины</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">от {{ price_woman.price }}&#8381;<small class="text-body-secondary fw-light">/за человека</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>{{ price_woman.description|linebreaks }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3 text-bg-success">
+        <h4 class="my-0 fw-normal">Выезд на территорию заказчика</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">+ {{ price_viesd.price }}&#8381;<small class="text-body-secondary fw-light">/за человека</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>{{ price_viesd.description|linebreaks }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="table-responsive">
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th style="width: 34%;"></th>
+        <th style="width: 22%;">Что вы получаете с договором</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" class="text-start">Цена фиксируется для любых вредностей</th>
+        <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-square" viewBox="0 0 16 16">
+          <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+          <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"/>
+        </svg></td>
+      </tr>
+    </tbody>
+
+    <tbody>
+      <tr>
+        <th scope="row" class="text-start">Результат на следующий день</th>
+        <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-square" viewBox="0 0 16 16">
+          <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+          <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"/>
+        </svg></td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-start">Отдельное окно в регистратуер, что ускоряет прием пациентов и весь осмотр до 30 минут</th>
+        <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-square" viewBox="0 0 16 16">
+          <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+          <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"/>
+        </svg></td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-start">Ускоренное получение результатов в день обращения</th>
+        
+        <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-square" viewBox="0 0 16 16">
+          <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+          <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"/>
+        </svg></td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-start">Возможен выезд на адрес заказчика</th>
+        
+        <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-square" viewBox="0 0 16 16">
+          <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+          <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"/>
+        </svg></td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-start">Личный менеджер по сопровождению в любых вопросах</th>
+        
+        <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-square" viewBox="0 0 16 16">
+          <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+          <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"/>
+        </svg></td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-start">Возможность постоплаты</th>
+        
+        <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-square" viewBox="0 0 16 16">
+          <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+          <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"/>
+        </svg></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+  <div class="container marketing">
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                
+                <img class="img-fluid rounded float-start p-3" src="{% static 'media/predv-osmotr.jpg' %}" alt="" width="420">
+                <p class="lead">
+                  
+                  <h2>Необходимость предварительных профосмотров</h2>
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Периодический медицинский осмотр необходимо 
+                  проходить регулярно в период трудовой деятельности, это необходимо для 
+                  контроля готовности работников к полноценной работе. В соответствии с 
+                  отечественным законодательством подобный отбор не является 
+                  дискриминацией и относится к числу мер по охране здоровья 
+                  населения (в 1-ю очередь, самого работника).
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Периодичность повтора медицинских осмотров 
+                  установлена в Приказе Минздравсоцразвития, для некоторых специальностей 
+                  медосмотр проводится дважды в год. Работодатели предоставляют 
+                  сотрудникам направления на прохождение медкомиссии.
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Периодический профосмотр требуется 
+                  следующим категориям работников:
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;<li>
+                    сотрудники детских учреждений;
+                  </li>
+                  <li>
+                    сотрудники медучреждений;
+                  </li>
+                  <li>
+                    работники водопроводных сооружений;
+                  </li>
+                  <li>
+                    работники организаций торговли и общественного питания;
+                  </li>
+                  <li>
+                    сотрудники, выполняющие свои обязанности во вредных и опасных условиях;
+                  </li>
+                  <li>
+                    и другие.
+                  </li>
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Периодический осмотр подразумевает выявление 
+                  профессиональных заболеваний, в т.ч. на ранней стадии (профилактика). 
+                  Сотрудник, не способный выполнять ту или иную работу по медицинским 
+                  противопоказаниям, способен создать серьёзную угрозу безопасности 
+                  другим работникам. Периодические медицинские осмотры направлены на 
+                  выявления заболеваний, а также на их своевременное лечение. Ну и, 
+                  конечно, на предупреждение несчастных случаев.
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Необходимость и процедура периодических 
+                  медосмотров определена в Приказе Минздравсоцразвития, который 
+                  обязывает прохождение периодического осмотра каждым работником.
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;<h2>Порядок прохождения периодического профосмотра</h2>
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Периодические осмотры работников имеют право 
+                  проводить только те медицинские учреждения, у которых есть разрешение на 
+                  обследования и экспертизу профессиональной пригодности сотрудников. Для 
+                  медосмотра формируется врачебная комиссия, в которую входят специалисты 
+                  высшей категории по профпатологии и глава комиссии - авторитетный врач 
+                  профпатолог.
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Проведение периодических медосмотров определяется наличием вредных 
+                  факторов производства, влияющих на работника, а также видом выполняемых 
+                  работ. У работников нет основания для беспокойства о пропуске работы и 
+                  соответствующего снижения заработка, согласно ст.185 ТК РФ работодатель 
+                  обязан сохранить средний заработок на время прохождения обследования.
+
+                  <div class="container ">
+                    <div class="p-5 bg-light rounded-3">
+                      <p class="lead">
+
+                        Обратите внимание! Если работодатель не выполняет своих 
+                        обязанностей по медицинскому осмотру работников, ему грозят 
+                        крупные штрафы (ч. 3 ст. 5.27.1 КоАП РФ): 
+                        
+                        <li>
+                        должностным лицам и ИП — на сумму от 15 000 до 25 000 рублей;
+                        </li>
+                        <li>
+                        юрлицам — от 110 000 до 130000 рублей.
+                        </li>
+                        
+                        <br>За повторное нарушение предусмотрен еще более суровое наказание: 
+
+                        <li>
+                        штраф в размере от 30 000 до 40 000 рублей или дисквалификация на срок от одного до трех лет — должностных лиц;
+                        </li>
+                        <li>
+                        штраф от 30 000 до 40 000 рублей или административное приостановление деятельности на срок до 90 суток — ИП;
+                        </li>
+                        <li>
+                        штраф от 100 000 до 200 000 рублей или административное приостановление деятельности на срок до 90 суток — юрлиц.
+                        </li> 
+
+                      </p>
+                    </div>
+                  </div>
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;Периодический медицинский осмотр работников 
+                  проводится на основе поименного списка, предоставленного в десяти-дневный 
+                  срок территориальному органу Роспотребнадзора по месту расположения 
+                  учреждения (компании, предприятия, учебного заведения и т.д.). 
+                  Организация медицинского осмотра руководителем предприятия включает 
+                  утверждение списка не позднее, чем за 2 месяца до установленной даты 
+                  проведения осмотра. Исходя из этого списка, медицинская комиссия 
+                  составляет календарный план периодического осмотра. После этого 
+                  управляющий должен ознакомить сотрудников с планом медосмотра 
+                  (это необходимо сделать за 10 дней до установленной даты) и выдать 
+                  им соответствующие направления.
+
+                  <br>&nbsp;&nbsp;&nbsp;&nbsp;<h2>Для прохождения периодического медосмотра при себе необходимо иметь:</h2>
+
+                  
+                      <br><li>
+                        паспорт;
+                      </li>
+                      <li>
+                        направление из отдела кадров.
+                      </li>
+                    
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;Что оформляет медучреждение, какие документы?
+
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;<li>
+                        амбулаторную медицинскую карту, где указываются заключения 
+                        специалистов, результаты анализов и итоговое заключение по 
+                        результатам медосмотра;
+                      </li>
+                      <li>
+                        паспорт здоровья с номером и датой заполнения;
+                      </li>
+                      <li>
+                        само медицинское заключение.
+                      </li>
+                      
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;Наша клиника проводит также предрейсовый 
+                      медосмотр водителей. Таковой осмотр заключается в выявлении 
+                      употребления работниками предприятия наркотических веществ, 
+                      алкоголя, запрещенных лекарств (препаратов, противопоказанных 
+                      при выполнении соответствующих работ, т.е., в данном случае при 
+                      управлении средствами транспорта), в обнаружении наличия у 
+                      водителей алкогольной интоксикации, переутомления или изменённых 
+                      состояний сознания (депрессии, неврозов и т.д.). При выявлении 
+                      хотя бы 1 такого фактора водитель не допускается к управлению 
+                      транспортом, поскольку это может быть очень опасно для него и 
+                      окружающих, может повлечь человеческие жертвы или экономические 
+                      потери.
+
+                        
+                </p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+    
+
+    <!-- /END THE FEATURETTES -->
+<hr class="featurette-divider">
+<div class="row featurette">
+<h1 class="display-4 fw-normal">Схема проезда</h1>
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A32923ec50c84b444ea0967fa8cf5cf53e407a7d3aa3bea5c496b066b18a7b3fd&amp;width=1017&amp;height=570&amp;lang=ru_RU&amp;scroll=true"></script>
+</div>
+</div>
+{% endfor %}
+
+
+{% endblock %}
