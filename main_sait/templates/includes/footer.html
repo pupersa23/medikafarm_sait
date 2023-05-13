@@ -29,6 +29,13 @@
 				<p class="text-muted">Телефон: <a href="tel:{{ inf.phone_number }}" class="text-muted text-primary-hover"><i class="bi bi-telephone me-2"></i>{{ inf.phone_number }}</a> </p>
 				<p class="text-muted">Частным лицам: <a href="mailto:{{ inf.email_adm }}" class="text-muted text-primary-hover"><i class="bi bi-envelope me-2"></i>{{ inf.email_adm }}</a></p>
 				<p class="text-muted">Отдел продаж: <a href="mailto:{{ inf.email_sail }}" class="text-muted text-primary-hover"><i class="bi bi-envelope me-2"></i>{{ inf.email_sail }}</a></p>
+			
+
+				
+				<a href="https://zakupki.mos.ru/companyProfile/supplier/2232563" 
+				rel="nofollow" target="_blank" class="footer-postavshiki">
+				<img alt="Мы зарегистрированы на портале поставщиков" src="{% static 'media/portal.webp' %}"></a>
+			
 			</div>
       		{% endfor %}       
 			<!-- Widget 1 END -->
@@ -83,6 +90,7 @@
 							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'services:ultrasound' %}">УЗИ</a></li>
 							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'services:rentgen' %}">Рентген</a></li>
 							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'services:analisi' %}">Анализы</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'knigki:medknizhki' %}">Медкнижки</a></li>
 							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'services:fluromobil' %}">Аренда флюоромобиля</a></li>
 							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'profi:predvaritelnie' %}">Предварительный медосмотр</a></li>
 							<li class="nav-item"><a class="nav-link text-muted" href="{% url 'profi:pereodicheskiy' %}">Периодический медосмотр</a></li>
@@ -92,10 +100,7 @@
 						</ul>
 					</div>
 
-					<a href="https://zakupki.mos.ru/companyProfile/supplier/2232563" 
-					   rel="nofollow" target="_blank" class="footer-postavshiki">
-					   <img alt="Мы зарегистрированы на портале поставщиков" src="{% static 'media/portal.webp' %}"></a>
-
+					
 				</div>
 			</div>
 			<!-- Widget 2 END -->

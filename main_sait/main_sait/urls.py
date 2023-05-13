@@ -9,6 +9,7 @@ urlpatterns = [
     path('services/', include('services.urls', namespace='services')),
     path('spravki/', include('spravki.urls', namespace='spravki')),
     path('profosmotri/', include('profi.urls', namespace='profi')),
+    path('knigki/', include('knigki.urls', namespace='knigki')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

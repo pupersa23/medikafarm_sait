@@ -85,5 +85,5 @@ class Predsmena(models.Model):
     )
 
     class Meta:
-        verbose_name = 'Предсменный осмотр'
-        verbose_name_plural = 'Предсменный осмотр'
+        verbose_name = 'Предрейсовый осмотр'
+        verbose_name_plural = 'Предрейсовый осмотр'
