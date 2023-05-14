@@ -23,8 +23,10 @@
                &nbsp;&nbsp;О клинике
             </a>
             <ul class="dropdown-menu" aria-labelledby="menu1">
+              <li><a class="dropdown-item" href="#">О клинике</a></li>
+              <li><a class="dropdown-item" href="{% url 'home:contact' %}">Контакты</a></li>
               <li><a class="dropdown-item" href="#">Статьи</a></li>
-              <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#otsivi">Отзывы</a></li>
+              <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#otsivi">Отзывы</a></li>
               <li><a class="dropdown-item" href="#">Вопросы врачам</a></li>
               <li><a class="dropdown-item" href="#">Коллектив</a></li>
               <li><a class="dropdown-item" href="#">Вакансии</a></li>
@@ -109,10 +111,9 @@
           <li class="nav-item">
             <a href="#" class="nav-link px-2 text-blak">Цены</a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-blak">Контакты</a>
           <li class="nav-item text-bg-success rounded-3">
             <a href="#" class="nav-link px-2 text-white">Акции</a> 
+          </li>
           </ul>  
           &nbsp;&nbsp;
             <form class="d-flex" role="search">
@@ -126,16 +127,18 @@
   </nav>
 
   <div class="modal fade" id="otsivi" tabindex="-1" aria-labelledby="otsiviLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="otsiviLabel">Отзывы на Яндекс</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div style="height:800px;overflow:hidden;position:relative;"><iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/145178380882?comments"></iframe><a href="https://yandex.ru/maps/org/medikafarm/145178380882/" target="_blank" style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;padding:0 16px;box-sizing:border-box">Медикафарм на карте Москвы — Яндекс Карты</a></div>
+          <div class="container-fluid">
+            <div class="row">
+          <div style="width:560px;height:800px;overflow:hidden;position:relative;"><iframe style="width:100%;height:100%;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/145178380882?comments"></iframe><a href="https://yandex.ru/maps/org/medikafarm/145178380882/" target="_blank" style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;padding:0 16px;box-sizing:border-box">Медикафарм на карте Москвы — Яндекс Карты</a></div>        </div>
         </div>
-        
+        </div>
       </div>
     </div>
   </div>

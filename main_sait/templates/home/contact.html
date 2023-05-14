@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block title%}
+Контакты Медицинского центра МедикаФарм
+{% endblock %}
+
+{% block content %}
+{% for inf in info %}
+<div class="container">
+    
+    <div class="my-5 text-center">
+        <h1 class="display-5 fw-bold text-body-emphasis">Контакты</h1>
+    </div>
+
+    <div class="container px-4 " id="icon-grid">
+    
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"></use></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4">Телефон:</h3>
+              <p class="h4 lead">
+                
+                <a href="tel:{{ inf.phone_number }}" class="d-flex  mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        
+                  <span class="h4 lead ">
+                    {{ inf.phone_number }}
+                  </span>
+               </a>
+                
+                </p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"></use></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4">Почта для запросов и частным лицам:</h3>
+              <p class="h4 lead">
+                <a href="mailto:{{ inf.email_adm }}" class="d-flex  mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        
+                    <span class="h4 lead ">
+                        {{ inf.email_adm }}
+                    </span>
+                 </a>
+              </p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"></use></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4">Отдел продаж:</h3>
+              <p class="h4 lead">
+                <a href="mailto:{{ inf.email_sail }}" class="d-flex  mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        
+                    <span class="h4 lead ">
+                        {{ inf.email_sail }}
+                    </span>
+                 </a>
+              </p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#home"></use></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4">Адрес:</h3>
+              <p class="h4 lead">
+                <a href="https://yandex.ru/maps/213/moscow/?indoorLevel=1&ll=37.643734%2C55.728692&mode=routes&rtext=55.727203%2C37.646909~55.730059%2C37.641259&rtt=pd&ruri=ymapsbm1%3A%2F%2Forg%3Foid%3D145178380882~&z=17.79" target="_blank" class="d-flex  mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        
+                    <span class="h4 lead ">
+                        Москва, м. Павелецкая <br>
+                        1-й Кожевнический пер. дом 8
+                    </span>
+                 </a>
+                </p>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+
+</div>
+
+<div class="container-fluid">
+    <div class="justify-content-center">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A32923ec50c84b444ea0967fa8cf5cf53e407a7d3aa3bea5c496b066b18a7b3fd&amp;width=100%&amp;height=600&amp;lang=ru_RU&amp;scroll=true"></script>
+
+    </div>
+</div>
+
+{% endfor %}
+{% endblock %}

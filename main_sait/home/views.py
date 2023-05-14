@@ -53,3 +53,12 @@ def konfiden(request):
         'info': info,
     }
     return render(request, template, context)
+
+
+def contact(request):
+    template = 'home/contact.html'
+    info = SAIT_INFO
+    context = {
+        'info': info,
+    }
+    return render(request, template, context)

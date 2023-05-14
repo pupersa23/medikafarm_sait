@@ -13,7 +13,8 @@ SAIT_INFO = HomeTopInfo.objects.all()
 def medknizhki(request):
     template = 'knigki/knigki.html'
     info = SAIT_INFO
-    price = Knigki.objects.all()
+    price_all = Knigki.objects.filter(choice='all')
+    price_med = Knigki.objects.filter(choice='medik')
     if request.method == 'POST':
         form = ContactCompanyForm(request.POST or None,
                                   request.FILES or None)
@@ -40,6 +41,7 @@ def medknizhki(request):
     context = {
         'info': info,
         'form': form,
-        'price': price,
+        'price_all': price_all,
+        'price_med': price_med,
     }
     return render(request, template, context)
