@@ -2,8 +2,8 @@ from django.shortcuts import get_object_or_404, render
 
 from home.models import HomeTopInfo
 
-from .models import (Bassein, Gibdd, Gims, Gstayna, Gsy, Spravka086_1,
-                     Spravka095_1, Travel, Bolnichnij)
+from .models import (Bassein, Bolnichnij, Gibdd, Gims, Gstayna, Gsy,
+                     Spravka086_1, Spravka095_1, Travel)
 
 SAIT_INFO = HomeTopInfo.objects.all()
 

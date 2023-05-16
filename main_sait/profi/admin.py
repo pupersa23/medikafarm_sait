@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Predvaritelnie, Pereodik, Psixushka, Predsmena
+from .models import Pereodik, Predsmena, Predvaritelnie, Psixushka
 
 
 class PredvaritelnieAdmin(admin.ModelAdmin):

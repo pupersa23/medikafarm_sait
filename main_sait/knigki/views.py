@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect
-from django.core.mail import send_mail
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.shortcuts import redirect, render
 
 from home.models import HomeTopInfo
 
-from .models import Knigki
 from .forms import ContactCompanyForm
+from .models import Knigki
 
 SAIT_INFO = HomeTopInfo.objects.all()
 

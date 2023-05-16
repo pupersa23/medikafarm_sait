@@ -1,0 +1,352 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block title%}
+Каталог Медицинского центра МедикаФарм
+{% endblock %}
+
+{% block content %}
+{% for inf in info %}
+
+<div class="container p-4">
+
+  <div class="p-4 bg-light rounded-3">
+  <div class="bd-example">
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 rounded-2">
+      <a class="navbar-brand" href=""><h2>Каталог</h2></a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <div class="btn-group p-2">
+            <a class="btn btn-success" href="#scrollspyHeading1">Услуги</a>
+            <a class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#scrollspyHeading2">УЗИ диагностика</a></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading3">Рентген</a></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading4">Аренда флюоромобиля</a></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading5">Медицинские анализы</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="btn-group p-2">
+            <a class="btn btn-success" href="#scrollspyHeading6">Профосмотры</a>
+            <a class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#scrollspyHeading7">Предварительные</a></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading8">Периодический и Внеочередной</a></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading9">Психиатрическое освидетельствование</a></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading10">Предрейсовый осмотр</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="btn-group p-2">
+            <a class="btn btn-success" href="#scrollspyHeading11">Справки</a>
+            <a class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#scrollspyHeading12">Больничный лист</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="btn-group p-2">
+          <a class="btn btn-success" href="#scrollspyHeading13">Медицинские книжки</a>
+          <a class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#scrollspyHeading14">Любая категория, <br> кроме медицинской деятельности</a></li>
+            <li><a class="dropdown-item" href="#scrollspyHeading15">Медицинская деятельность</a></li>
+          </ul>
+        </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="scrollspy-example bg-body-tertiary p-3 rounded-2" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+      <h3 id="scrollspyHeading1">Услуги</h3>
+      <h5 class="text-center" id="scrollspyHeading2">УЗИ диагностика</h5>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Услуга</th>
+            <th scope="col">Цена, руб.</th>
+          </tr>
+        </thead>
+        {% for pric in price_uzi %}
+        <tbody>
+          <tr>
+            <td>{{ pric.description }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      <h5 class="text-center" id="scrollspyHeading3">Рентген</h5>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Услуга</th>
+            <th scope="col">Цена, руб.</th>
+          </tr>
+        </thead>
+        {% for pric in price_rentgen %}
+        <tbody>
+          <tr>
+            <td>{{ pric.description }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      <h5 class="text-center" id="scrollspyHeading4">Аренда флюоромобиля</h5>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Расстояние</th>
+            <th scope="col">Цена, руб.</th>
+          </tr>
+        </thead>
+        {% for pric in price_fluromobil %}
+        <tbody>
+          <tr>
+            <td>{{ pric.distance }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      <h5 class="text-center" id="scrollspyHeading5">Медицинские анализы</h5>
+          <div class="row justify-content-center">
+              <div class="col-lg-6">
+                <div class="h-100 p-5 bg-light border rounded-3 shadow-lg">
+                  <div class="row">
+                    <div class="col">
+            <p>Информацию о ценах вы можете найти в прикрепленном файле, используя поиск. Или звоните в клинику, чтобы узнать больше об анализах, подготовке и записи, телефон <a href="tel:{{ inf.phone_number }}" class="fw-bold text-primary-hover"><i class="bi bi-telephone me-2"></i>{{ inf.phone_number }}</a></p>
+            
+            {% for fil in price_analisi %}
+            <div class="d-grid gap-2 col-6 mx-auto">
+            <a href="/media/{{ fil.file }}" type="button" class="btn btn-lg btn-outline-danger" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM1.6 11.85H0v3.999h.791v-1.342h.803c.287 0 .531-.057.732-.173.203-.117.358-.275.463-.474a1.42 1.42 0 0 0 .161-.677c0-.25-.053-.476-.158-.677a1.176 1.176 0 0 0-.46-.477c-.2-.12-.443-.179-.732-.179Zm.545 1.333a.795.795 0 0 1-.085.38.574.574 0 0 1-.238.241.794.794 0 0 1-.375.082H.788V12.48h.66c.218 0 .389.06.512.181.123.122.185.296.185.522Zm1.217-1.333v3.999h1.46c.401 0 .734-.08.998-.237a1.45 1.45 0 0 0 .595-.689c.13-.3.196-.662.196-1.084 0-.42-.065-.778-.196-1.075a1.426 1.426 0 0 0-.589-.68c-.264-.156-.599-.234-1.005-.234H3.362Zm.791.645h.563c.248 0 .45.05.609.152a.89.89 0 0 1 .354.454c.079.201.118.452.118.753a2.3 2.3 0 0 1-.068.592 1.14 1.14 0 0 1-.196.422.8.8 0 0 1-.334.252 1.298 1.298 0 0 1-.483.082h-.563v-2.707Zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638H7.896Z"></path>
+              </svg>
+              Открыть
+            </a>
+          </div>
+          {% endfor %}
+          
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+      <h3 id="scrollspyHeading6">Профосмотры</h3>
+      <h5 class="text-center" id="scrollspyHeading7">Предварительные</h5>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Цена, руб. за человека</th>
+          </tr>
+        </thead>
+        {% for pric in price_predvar %}
+        <tbody>
+          <tr>
+            <td>{{ pric.title }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      <h5 class="text-center" id="scrollspyHeading8">Периодические и Внеочередной</h5>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Цена, руб. за человека</th>
+          </tr>
+        </thead>
+        {% for pric in price_periodic %}
+        <tbody>
+          <tr>
+            <td>{{ pric.title }}</td>
+            <td>от {{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      <h5 class="text-center" id="scrollspyHeading9">Психиатрическое освидетельствование</h5>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Цена, руб. за человека</th>
+          </tr>
+        </thead>
+        {% for pric in price_psix %}
+        <tbody>
+          <tr>
+            <td>{{ pric.title }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      <h5 class="text-center" id="scrollspyHeading10">Предрейсовый осмотр</h5>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Цена, руб. за человека</th>
+          </tr>
+        </thead>
+        {% for pric in price_predreis %}
+        <tbody>
+          <tr>
+            <td>{{ pric.title }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+
+      <h3 id="scrollspyHeading11">Справки</h3>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Наименование справки</th>
+            <th scope="col">Цена, руб.</th>
+          </tr>
+        </thead>
+        {% for pric in price_gibdd %}
+        <tbody>
+          <tr>
+            <td>{{ pric.title }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        {% for pric in price_gims %}
+        <tbody>
+          <tr>
+            <td>{{ pric.title }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        {% for pric in price_gstayna %}
+        <tbody>
+          <tr>
+            <td>{{ pric.title }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        {% for pric in price_gsy %}
+        <tbody>
+          <tr>
+            <td>{{ pric.title }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        {% for pric in price_086 %}
+        <tbody>
+          <tr>
+            <td>{{ pric.title }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        {% for pric in price_095 %}
+        <tbody>
+          <tr>
+            <td>{{ pric.title }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        {% for pric in price_sport %}
+        <tbody>
+          <tr>
+            <td>{{ pric.title }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        {% for pric in price_travel %}
+        <tbody>
+          <tr>
+            <td>{{ pric.title }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      <h5 class="text-center" id="scrollspyHeading12">Больничный лист</h5>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Цена, руб.</th>
+          </tr>
+        </thead>
+        {% for pric in price_bolnic %}
+        <tbody>
+          <tr>
+            <td>{{ pric.title }}</td>
+            <td>{{ pric.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      <h3 id="scrollspyHeading13">Медицинские книжки</h3>
+      <h5 class="text-center" id="scrollspyHeading14">Любая категория, кроме медицинской деятельности</h5>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Услуга</th>
+            <th scope="col">Цена, руб.</th>
+          </tr>
+        </thead>
+        {% for pric_all in price_knig_all %}
+        <tbody>
+          <tr>
+            <td>{{ pric_all.title }}</td>
+            <td>{{ pric_all.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      <h5 class="text-center" id="scrollspyHeading15">Медицинская деятельность</h5>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Услуга</th>
+            <th scope="col">Цена, руб.</th>
+          </tr>
+        </thead>
+        {% for pric_all in price_kni_med %}
+        <tbody>
+          <tr>
+            <td>{{ pric_all.title }}</td>
+            <td>{{ pric_all.price }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+
+
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+{% endblock %}

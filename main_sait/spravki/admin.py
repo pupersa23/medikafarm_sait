@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from .models import (Bassein, Gibdd, Gims, Gstayna, Gsy, Spravka086_1,
-                     Spravka095_1, Travel, Bolnichnij)
+from .models import (Bassein, Bolnichnij, Gibdd, Gims, Gstayna, Gsy,
+                     Spravka086_1, Spravka095_1, Travel)
 
 
 class GibdddAdmin(admin.ModelAdmin):
