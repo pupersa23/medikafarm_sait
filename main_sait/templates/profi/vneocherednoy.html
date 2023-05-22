@@ -40,6 +40,18 @@
     <button type="button" class="btn btn-success btn-lg px-4 me-md-2" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo">Заключить договор</button>
     <a class="btn btn-success btn-lg" href="tel:{{ inf.phone_number }}" role="button">Связаться с отделом продаж</a>
   </div>
+
+          {% for sale in sale_info %}
+          {% if sale.choice  == 'profi:vneocherednoy' %}
+          <div class="p-5 text-center bg-light rounded-3">
+            <h1 class="text-danger text-body-emphasis">АКЦИЯ</h1>
+            <p class="lead">
+              {{ sale.text|linebreaks }}
+              Дейсивует до {{ sale.pub_date }}
+            </p>
+          </div>
+          {% endif %}
+          {% endfor %}
             
   <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">

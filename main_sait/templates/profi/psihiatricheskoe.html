@@ -34,6 +34,18 @@
       с людьми. </p>
     
   </div>
+
+         {% for sale in sale_info %}
+          {% if sale.choice  == 'profi:psihiatricheskoe' %}
+          <div class="p-5 text-center bg-light rounded-3">
+            <h1 class="text-danger text-body-emphasis">АКЦИЯ</h1>
+            <p class="lead">
+              {{ sale.text|linebreaks }}
+              Дейсивует до {{ sale.pub_date }}
+            </p>
+          </div>
+          {% endif %}
+          {% endfor %}
 </div>
 </div>
 

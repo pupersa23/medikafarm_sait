@@ -4,19 +4,19 @@ from .models import Pereodik, Predsmena, Predvaritelnie, Psixushka
 
 
 class PredvaritelnieAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'title', 'description', 'price',)
+    list_display = ('pk', 'choice', 'description', 'price',)
 
 
 class PereodikAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'title', 'description', 'price',)
+    list_display = ('pk', 'choice', 'description', 'price',)
 
 
 class PsixushkaAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'title', 'description', 'price',)
+    list_display = ('pk', 'choice', 'description', 'price',)
 
 
 class PredsmenaAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'title', 'description', 'price',)
+    list_display = ('pk', 'choice', 'description', 'price',)
 
 
 admin.site.register(Predvaritelnie, PredvaritelnieAdmin)

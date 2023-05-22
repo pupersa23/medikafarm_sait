@@ -2,11 +2,13 @@
 {% load static %}
 
 
+
 {% block title%}
 УЗИ в Медицинский центр МедикаФарм
 {% endblock %}
 
 {% block content %}
+
 {% for inf in info %}
 <div class="container my-5">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
@@ -17,9 +19,20 @@
             <!-- Button trigger modal -->
             <a class="btn btn-success btn-lg" href="#scrollspyHeading1" role="button">Цены</a>
             <a class="btn btn-success btn-lg" href="tel:{{ inf.phone_number }}" role="button">Записаться на прием</a>
-  
-            
           </div>  
+
+          {% for sale in sale_info %}
+          {% if sale.choice  == 'services:ultrasound' %}
+          <div class="p-5 text-center bg-light rounded-3">
+            <h1 class="text-danger text-body-emphasis">АКЦИЯ</h1>
+            <p class="lead">
+              {{ sale.text|linebreaks }}
+              Дейсивует до {{ sale.pub_date }}
+            </p>
+          </div>
+          {% endif %}
+          {% endfor %}
+
     </div>
       <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
           <img class="rounded-lg-3" src="{% static 'media/uzi.jpg' %}" alt="" width="520">

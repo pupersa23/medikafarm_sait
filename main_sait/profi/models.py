@@ -1,11 +1,25 @@
 from django.db import models
 
 
+CHOICES = (
+        ('men', 'Мужчинам'),
+        ('woman', 'Женщинам'),
+        ('corporat', 'Корпоративным'),
+    )
+CHOICES_2 = (
+        ('all', 'Частным'),
+        ('corporat', 'Корпоративным'),
+    )
+
+
 class Predvaritelnie(models.Model):
-    title = models.TextField(
-        'Наименование услуги',
-        help_text='Введите наименование услуги',
-        max_length=100
+    choice = models.CharField(
+        'Выбор к кому относится услуга',
+        help_text='''Выбор отобразит описание и
+                     цены в нужном окошке на сайте''',
+        max_length=100,
+        null=True,
+        choices=CHOICES
     )
     description = models.TextField(
         'Текст объявления',
@@ -24,10 +38,13 @@ class Predvaritelnie(models.Model):
 
 
 class Pereodik(models.Model):
-    title = models.TextField(
-        'Наименование услуги',
-        help_text='Введите наименование услуги',
-        max_length=100
+    choice = models.CharField(
+        'Выбор к кому относится услуга',
+        help_text='''Выбор отобразит описание и
+                     цены в нужном окошке на сайте''',
+        max_length=100,
+        null=True,
+        choices=CHOICES
     )
     description = models.TextField(
         'Текст объявления',
@@ -46,10 +63,13 @@ class Pereodik(models.Model):
 
 
 class Psixushka(models.Model):
-    title = models.TextField(
-        'Наименование услуги',
-        help_text='Введите наименование услуги',
-        max_length=100
+    choice = models.CharField(
+        'Выбор к кому относится услуга',
+        help_text='''Выбор отобразит описание и
+                     цены в нужном окошке на сайте''',
+        max_length=100,
+        null=True,
+        choices=CHOICES_2
     )
     description = models.TextField(
         'Текст объявления',
@@ -68,10 +88,13 @@ class Psixushka(models.Model):
 
 
 class Predsmena(models.Model):
-    title = models.TextField(
-        'Наименование услуги',
-        help_text='Введите наименование услуги',
-        max_length=100
+    choice = models.CharField(
+        'Выбор к кому относится услуга',
+        help_text='''Выбор отобразит описание и
+                     цены в нужном окошке на сайте''',
+        max_length=100,
+        null=True,
+        choices=CHOICES_2
     )
     description = models.TextField(
         'Текст объявления',

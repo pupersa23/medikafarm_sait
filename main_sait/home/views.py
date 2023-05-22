@@ -7,6 +7,7 @@ from profi.models import Pereodik, Predsmena, Predvaritelnie, Psixushka
 from services.models import Analisi, Fluromobil, Rentgen, UltraSound
 from spravki.models import (Bassein, Bolnichnij, Gibdd, Gims, Gstayna, Gsy,
                             Spravka086_1, Spravka095_1, Travel)
+from sale.models import Sale
 
 from .forms import ContactDoctorForm
 from .models import HomeBord, HomeDoctor, HomePriceCorp, HomeTopInfo
@@ -20,6 +21,7 @@ def index(request):
     board = HomeBord.objects.all()
     price = HomePriceCorp.objects.all()
     doctor = HomeDoctor.objects.all()
+    sale = Sale.objects.all()
     if request.method == 'POST':
         form = ContactDoctorForm(request.POST or None)
         if form.is_valid():
@@ -48,6 +50,7 @@ def index(request):
         'price': price,
         'doctor': doctor,
         'form': form,
+        'sale': sale,
     }
     return render(request, template, context)
 

@@ -36,6 +36,19 @@
   
             
           </div>  
+
+          {% for sale in sale_info %}
+          {% if sale.choice  == 'services:analisi' %}
+          <div class="p-5 text-center bg-light rounded-3">
+            <h1 class="text-danger text-body-emphasis">АКЦИЯ</h1>
+            <p class="lead">
+              {{ sale.text|linebreaks }}
+              Дейсивует до {{ sale.pub_date }}
+            </p>
+          </div>
+          {% endif %}
+          {% endfor %}
+
     </div>
       <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
           <img class="rounded-lg-3" src="{% static 'media/analisi.jpg' %}" alt="" width="520">
