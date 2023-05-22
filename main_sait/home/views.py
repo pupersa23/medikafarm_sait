@@ -4,10 +4,10 @@ from django.shortcuts import redirect, render
 
 from knigki.models import Knigki
 from profi.models import Pereodik, Predsmena, Predvaritelnie, Psixushka
+from sale.models import Sale
 from services.models import Analisi, Fluromobil, Rentgen, UltraSound
 from spravki.models import (Bassein, Bolnichnij, Gibdd, Gims, Gstayna, Gsy,
                             Spravka086_1, Spravka095_1, Travel)
-from sale.models import Sale
 
 from .forms import ContactDoctorForm
 from .models import HomeBord, HomeDoctor, HomePriceCorp, HomeTopInfo

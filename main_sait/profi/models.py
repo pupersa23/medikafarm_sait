@@ -1,6 +1,5 @@
 from django.db import models
 
-
 CHOICES = (
         ('men', 'Мужчинам'),
         ('woman', 'Женщинам'),

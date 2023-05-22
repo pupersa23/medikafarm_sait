@@ -1,7 +1,7 @@
+from asgiref.sync import sync_to_async
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import redirect, render
-from asgiref.sync import sync_to_async
 
 from home.models import HomeTopInfo
 from sale.models import Sale

@@ -84,6 +84,7 @@
 
     </div>
 
+
     <div class="col">
       <div class="row row-cols-1 row-cols-sm-2 g-4 gy-5">
         <div class="col d-flex align-items-start">
@@ -132,7 +133,18 @@
 
 
     <!-- START THE FEATURETTES -->
-
+    {% for sale in sale_info %}
+    {% if sale.choice  == 'knigki:medknizhki' %}
+    <hr class="featurette-divider">
+    <div class="p-5 text-center bg-light rounded-3">
+      <h1 class="text-danger text-body-emphasis">АКЦИЯ</h1>
+      <p class="lead">
+        {{ sale.text|linebreaks }}
+        Дейсивует до {{ sale.pub_date }}
+      </p>
+    </div>
+    {% endif %}
+    {% endfor %}
     <hr class="featurette-divider">
 
     <div class="row featurette">

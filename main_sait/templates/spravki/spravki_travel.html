@@ -16,6 +16,19 @@
       <p class="col-lg-10 fs-4">Мы предлагаем услугу быстрого оформления 
         медицинских справок для поездки в санаторий или для выезда за 
         границу. Они необходимы для определения состояния здоровья.</p>
+
+        {% for sale in sale_info %}
+        {% if sale.choice  == 'spravki:spravki_travel' %}
+        <div class="p-5 text-center bg-light rounded-3">
+          <h1 class="text-danger text-body-emphasis">АКЦИЯ</h1>
+          <p class="lead">
+            {{ sale.text|linebreaks }}
+            Дейсивует до {{ sale.pub_date }}
+          </p>
+        </div>
+        {% endif %}
+        {% endfor %}
+
     </div>
     <div class="col-md-10 mx-auto col-lg-5">
       <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">

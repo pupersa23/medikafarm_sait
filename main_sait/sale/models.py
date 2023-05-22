@@ -12,6 +12,16 @@ class Sale(models.Model):
         ('profi:vneocherednoy', 'Внеочередной'),
         ('profi:psihiatricheskoe', 'Психиатрическое'),
         ('profi:predsmenniy', 'Предрейсы'),
+        ('spravki:gibdd', 'Гаи'),
+        ('spravki:gims', 'Гимс'),
+        ('spravki:gsy', 'ГСу'),
+        ('spravki:gstayna', 'Гостайна'),
+        ('spravki:spravki_086', '086у'),
+        ('spravki:student_095', '095у'),
+        ('spravki:spravki_sport', 'Спорт'),
+        ('spravki:spravki_travel', 'Путешествия'),
+        ('spravki:bolnichnij', 'Больничный лист'),
+        ('knigki:medknizhki', 'Книжки'),
     )
     CHOICES_BANNER = (
         ('true', 'Первый'),

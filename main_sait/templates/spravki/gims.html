@@ -19,6 +19,19 @@
       Только на основе соблюдения вышеуказанных пунктов, можно стать 
       владельцем медицинской справки, дающей право управлять маломерным судном.
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+
+        {% for sale in sale_info %}
+        {% if sale.choice  == 'spravki:gims' %}
+        <div class="p-5 text-center bg-light rounded-3">
+          <h1 class="text-danger text-body-emphasis">АКЦИЯ</h1>
+          <p class="lead">
+            {{ sale.text|linebreaks }}
+            Дейсивует до {{ sale.pub_date }}
+          </p>
+        </div>
+        {% endif %}
+        {% endfor %}
+
       <table class="table table-hover">
         <thead>
           <tr>

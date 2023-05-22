@@ -1,9 +1,9 @@
-from django.shortcuts import render
 from asgiref.sync import sync_to_async
+from django.shortcuts import render
 
-from .models import Sale
 from home.models import HomeTopInfo
 
+from .models import Sale
 
 SAIT_INFO = HomeTopInfo.objects.all()
 
