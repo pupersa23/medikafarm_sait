@@ -28,7 +28,7 @@
       <div class="carousel-inner">
         {% for boar in board %}
         <div class="carousel-item {% if boar.choice  == 'true' %}active{% endif %}">
-          <svg class="bd-placeholder-img" width="100%" height="512" xmlns="http://www.w3.org/2000/svg" aria-hidden="false" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="512" fill="#009e9e"></rect></svg>
+          <svg class="bd-placeholder-img" width="100%" height="412" xmlns="http://www.w3.org/2000/svg" aria-hidden="false" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="512" fill="#009e9e"></rect></svg>
           <div class="container">
             <div class="carousel-caption">
               <h1>{{ boar.title|linebreaks }}</h1>
@@ -40,7 +40,7 @@
         {% endfor %}
         {% for sal in sale %}
         <div class="carousel-item {% if sal.board_choice  == 'true' %}active{% endif %}">
-          <svg class="bd-placeholder-img" width="100%" height="512" xmlns="http://www.w3.org/2000/svg" aria-hidden="false" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="512" fill="#009e9e"></rect></svg>
+          <svg class="bd-placeholder-img" width="100%" height="412" xmlns="http://www.w3.org/2000/svg" aria-hidden="false" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="512" fill="#009e9e"></rect></svg>
           <div class="container">
             <div class="carousel-caption">
               <h1>Акция</h1>
@@ -170,7 +170,7 @@
               <div class="col">
                 <div class="d-flex flex-column gap-2 align-items-center">
                   <div class="feature-icon-small d-inline-flex align-items-center justify-content-center fs-4 rounded-3">
-                    <img src="media/{{ doc.image }}" class="rounded mx-auto d-block" width="250" height="250" alt="">
+                    <img src="media/{{ doc.image }}" class="rounded mx-auto d-block" width="250" height="300" alt="">
                   </div>
                   <h5 class="fw-semibold mb-0" align="center">{{ doc.fio }}</h5>
                   <p class="text-muted">{{ doc.job_title }}</p>
@@ -191,76 +191,29 @@
 
       <h2 class="pb-2 border-bottom">Статьи</h2>
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 py-5">
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
+      <div class="row mb-2">
+        {% for post in posts %}
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <h3 class="mb-0">{{ post.title }}</h3>
+              <div class="mb-1 text-body-secondary">{{ post.pub_date|date:"d E Y" }}</div>
+              <p class="card-text mb-auto">{{ post.overview }}</p>
+              <a href="{% url 'posts:post_detail' post.id %}" class="stretched-link">Подробнее</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img src="/media/{{ post.image }}" class="bd-placeholder-img" width="200" height="250" alt="">
+                  
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
+        
+        
       </div>
 
-      <div class="d-grid gap-2 col-6 mx-auto g-4 py-5">
-        <button class="btn btn-outline-success" type="button">Все статьи</button>
+      <div class="d-grid gap-2 col-6 mx-auto g-4 ">
+        <a class="btn btn-outline-success" href="{% url 'posts:posts_all' %}">Все статьи</a>
       </div>
 
     </div>

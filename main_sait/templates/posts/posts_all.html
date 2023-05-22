@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block title%}
+Статьи Медицинского центра МедикаФарм
+{% endblock %}
+
+{% block content %}
+{% for inf in info %}
+
+<div class="container p-4">
+
+    <h2 class="pb-2 border-bottom">Все статьи</h2>
+
+    <div class="row mb-2">
+        {% for post in posts_all %}
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              
+              <h3 class="mb-0">{{ post.title }}</h3>
+              <div class="mb-1 text-body-secondary">{{ post.pub_date|date:"d E Y" }}</div>
+              <p class="card-text mb-auto">{{ post.overview }}</p>
+              <a href="{% url 'posts:post_detail' post.id %}" class="stretched-link">Подробнее</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <img src="/media/{{ post.image }}" class="bd-placeholder-img" width="200" height="250" alt="">
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+
+  </div>
+
+{% endfor %}
+{% endblock %}

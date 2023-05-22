@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.shortcuts import redirect, render
 
 from knigki.models import Knigki
+from posts.models import Post
 from profi.models import Pereodik, Predsmena, Predvaritelnie, Psixushka
 from sale.models import Sale
 from services.models import Analisi, Fluromobil, Rentgen, UltraSound
@@ -18,6 +19,7 @@ SAIT_INFO = HomeTopInfo.objects.all()
 def index(request):
     template = 'home/home.html'
     info = SAIT_INFO
+    posts = Post.objects.filter().order_by('-pub_date')[:4]
     board = HomeBord.objects.all()
     price = HomePriceCorp.objects.all()
     doctor = HomeDoctor.objects.all()
@@ -25,7 +27,7 @@ def index(request):
     if request.method == 'POST':
         form = ContactDoctorForm(request.POST or None)
         if form.is_valid():
-            subject = "Пробное сообщение"
+            subject = "Заявка с главное страницы"
             body = {
                 'first_name': form.cleaned_data['first_name'],
                 'email_address': form.cleaned_data['email_address'],
@@ -51,6 +53,7 @@ def index(request):
         'doctor': doctor,
         'form': form,
         'sale': sale,
+        'posts': posts,
     }
     return render(request, template, context)
 

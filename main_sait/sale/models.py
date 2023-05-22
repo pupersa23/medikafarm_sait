@@ -53,6 +53,7 @@ class Sale(models.Model):
     )
     image = models.ImageField(
         'Картинка',
+        upload_to='sale/',
         blank=True
     )
 

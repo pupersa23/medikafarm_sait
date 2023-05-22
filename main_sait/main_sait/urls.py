@@ -11,6 +11,7 @@ urlpatterns = [
     path('profosmotri/', include('profi.urls', namespace='profi')),
     path('knigki/', include('knigki.urls', namespace='knigki')),
     path('akzii/', include('sale.urls', namespace='sale')),
+    path('statii/', include('posts.urls', namespace='posts')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

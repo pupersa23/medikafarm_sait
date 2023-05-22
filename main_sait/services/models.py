@@ -38,6 +38,7 @@ class Rentgen(models.Model):
 class Analisi(models.Model):
     file = models.FileField(
         'PDF файл с ценами на анализы',
+        upload_to='services/',
         help_text='Загрузите файл PDF с ценами',
     )
 

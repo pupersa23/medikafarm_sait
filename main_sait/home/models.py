@@ -97,6 +97,7 @@ class HomePriceCorp(models.Model):
 class HomeDoctor(models.Model):
     image = models.ImageField(
         'Фото врача',
+        upload_to='home/',
         blank=True
     )
     fio = models.TextField(

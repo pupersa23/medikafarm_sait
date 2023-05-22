@@ -13,6 +13,13 @@
 <div class="container p-4">
 
   <div class="p-4 bg-light rounded-3">
+
+    {% if not sale %}
+      
+    <h1 class="text-body-emphasis p-5">Тут скоро появятся наши акции!</h1>
+    
+    {% endif %}
+
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
       {% for sal in sale %}

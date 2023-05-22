@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'profi',
     'knigki',
     'sale',
+    'posts',
 ]
 
 MIDDLEWARE = [
