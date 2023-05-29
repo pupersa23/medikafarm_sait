@@ -97,7 +97,7 @@
           <img src="{% static 'media/collages.png' %}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="800" height="600" loading="lazy">
         </div>
         <div class="col-lg-6">
-          <h1 class="display-5 fw-bold lh-1 mb-3">О центре</h1>
+          <h1 class="display-5 fw-bold lh-1 mb-3">О клинике</h1>
           <p class="lead">Медицинский центр "МедикаФарм" предоставляет медицинские услуги с 2006 г. Мы гордимся качеством своих услуг, прислушиваемся к пожеланиям клиентов. Мы поддерживаем цены на доступном уровне, а график работы выстроен так, чтобы нашим клиентам было удобно попасть на прием в т.ч. после работы.
           </p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
@@ -148,12 +148,69 @@
                         {{ form.message|add_class:"form-control"|attr:"placeholder:Введите тему вопроса"|attr:"style:height:100px" }}
                         <label for="id_message">Вопрос:</label>
                       </div>
+                      <div class="form-check form-switch mb-3">
+                        <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+                        <div class="invalid-feedback">Необходимо дать согласие</div>
+                        <button class="btn btn-sm" style="--bs-btn-padding-y: .20rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" data-bs-target="#soglasie" data-bs-toggle="modal">
+                          Нажимая на кнопку, я принимаю условия соглашения.
+                        </button>
+                      </div>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
                     <button type="submit" class="btn btn-success" data-bs-target="sucsess">Отправить</button>
                   </div>
                 </form>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="soglasie" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+              <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Условия соглашения</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      Согласие на обработку персональных данных<br>
+                      <br>
+                      Настоящим в соответствии с Федеральным законом № 152-ФЗ 
+                      «О персональных данных» от 27.07.2006 года свободно, 
+                      своей волей и в своем интересе выражаю свое безусловное 
+                      согласие на обработку моих персональных данных ООО «МедикаГрупп» 
+                      (ОГРН 1107746016872, ИНН/КПП 7728723248/771001001), зарегистрированным 
+                      в соответствии с законодательством РФ по адресу: 125009, г.Москва, 
+                      1-й Кожевнический пер. дом 8 (далее по тексту – Оператор).<br>
+                      <br>
+                      Персональные данные - любая информация, относящаяся к определенному 
+                      или определяемому на основании такой информации физическому лицу. 
+                      Настоящее Согласие выдано мною на обработку следующих персональных данных:<br>
+                      • Фамилия, имя, отчество;<br>
+                      • Адрес электронной почты;<br>
+                      • Информация о трудовой деятельности;<br>
+                      • Телефонный номер (домашний, рабочий, мобильный);<br>
+                      <br>
+                      Согласие дано Оператору для совершения следующих действий с моими 
+                      персональными данными с использованием средств автоматизации и/или 
+                      без использования таких средств: сбор, систематизация, накопление, 
+                      хранение, уточнение (обновление, изменение), использование, обезличивание, 
+                      передача третьим лицам для указанных ниже целей, а также осуществление 
+                      любых иных действий, предусмотренных действующим законодательством 
+                      РФ как неавтоматизированными, так и автоматизированными способами.<br>
+                      <br>
+                      Настоящее согласие действует до момента его отзыва путем 
+                      направления соответствующего уведомления на электронный адрес post@medikafarm.ru.<br>
+                      <br>
+                      В случае отзыва мною согласия на обработку персональных данных 
+                      Оператор вправе продолжить обработку персональных данных без 
+                      моего согласия при наличии оснований, указанных в пунктах 2 – 
+                      11 части 1 статьи 6, части 2 статьи 10 и части 2 статьи 11 Федерального 
+                      закона №152-ФЗ «О персональных данных» от 26.06.2006 г.</div>
+                  
+                  <div class="modal-footer">
+                    <button class="btn btn-success" data-bs-target="#exampleModal1" data-bs-toggle="modal">Принимаю</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Не принимаю</button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -11,7 +11,7 @@ from spravki.models import (Bassein, Bolnichnij, Gibdd, Gims, Gstayna, Gsy,
                             Spravka086_1, Spravka095_1, Travel)
 
 from .forms import ContactDoctorForm
-from .models import HomeBord, HomeDoctor, HomePriceCorp, HomeTopInfo
+from .models import HomeBord, HomeDoctor, HomePriceCorp, HomeTopInfo, HomeDocuments
 
 SAIT_INFO = HomeTopInfo.objects.all()
 
@@ -63,6 +63,17 @@ def konfiden(request):
     info = SAIT_INFO
     context = {
         'info': info,
+    }
+    return render(request, template, context)
+
+
+def documents(request):
+    template = 'home/documents.html'
+    info = SAIT_INFO
+    documents = HomeDocuments.objects.all()
+    context = {
+        'info': info,
+        'documents': documents,
     }
     return render(request, template, context)
 

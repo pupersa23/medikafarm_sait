@@ -72,6 +72,11 @@
                     {{ form.message|add_class:"form-control"|attr:"placeholder:Введите реквизиты"|attr:"style:height:100px" }}
                     <label for="id_message">Введите реквизиты:</label>
                   </div>
+                  <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+                    <label class="form-check-label" for="validationFormCheck1">Нажимая на кнопку, я принимаю условия соглашения.</label>
+                    <div class="invalid-feedback">Необходимо дать согласие</div>
+                  </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
@@ -265,7 +270,7 @@
                             </button>
                           </h2>
                           <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
+                            <div class="accordion-body overflow-auto">
 
                               <table class="table table-hover">
                                 <thead>

@@ -113,3 +113,19 @@ class HomeDoctor(models.Model):
         ordering = ['-pk']
         verbose_name = 'Список врачей на главной странице'
         verbose_name_plural = 'Список врачей на главной странице'
+
+
+class HomeDocuments(models.Model):
+    title = models.TextField(
+        'Название документа',
+        help_text='Введите название документа'
+    )
+    file = models.FileField(
+        'Документ',
+        help_text='Загрузите документ'
+    )
+
+    class Meta:
+        ordering = ['-pk']
+        verbose_name = 'Список внутренних нормативных документов'
+        verbose_name_plural = 'Список внутренних нормативных документов'

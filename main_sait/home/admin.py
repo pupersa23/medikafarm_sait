@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import HomeBord, HomeDoctor, HomePriceCorp, HomeTopInfo
+from .models import HomeBord, HomeDoctor, HomePriceCorp, HomeTopInfo, HomeDocuments
 
 
 class HomeTopInfoAdmin(admin.ModelAdmin):
@@ -31,7 +31,12 @@ class HomeDoctorAdmin(admin.ModelAdmin):
     list_display = ('pk', 'image', 'fio', 'job_title',)
 
 
+class HomeDocumentsAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'title', 'file',)
+
+
 admin.site.register(HomeTopInfo, HomeTopInfoAdmin)
 admin.site.register(HomeBord, HomeBordAdmin)
 admin.site.register(HomePriceCorp, HomePriceCorpAdmin)
 admin.site.register(HomeDoctor, HomeDoctorAdmin)
+admin.site.register(HomeDocuments, HomeDocumentsAdmin)

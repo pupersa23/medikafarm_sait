@@ -69,6 +69,11 @@
                           {{ form.message|add_class:"form-control"|attr:"placeholder:Введите тему вопроса"|attr:"style:height:100px" }}
                           <label for="id_message">Заявка:</label>
                         </div>
+                        <div class="form-check mb-3">
+                          <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+                          <label class="form-check-label" for="validationFormCheck1">Нажимая на кнопку, я принимаю условия соглашения.</label>
+                          <div class="invalid-feedback">Необходимо дать согласие</div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>

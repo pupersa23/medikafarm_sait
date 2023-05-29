@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404, render
 from home.models import HomeTopInfo
 
 from .models import Post
+from .utils import paginator
 
 SAIT_INFO = HomeTopInfo.objects.all()
 
@@ -13,9 +14,10 @@ def posts_all(request):
     template = 'posts/posts_all.html'
     info = SAIT_INFO
     posts_all = Post.objects.all()
+    page_obj = paginator(request, posts_all)
     context = {
         'info': info,
-        'posts_all': posts_all,
+        'page_obj': page_obj,
     }
     return render(request, template, context)
 
